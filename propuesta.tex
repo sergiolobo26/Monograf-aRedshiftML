@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+%\usepackage{epstopdf}
+%\usepackage[spanish]{babel}
+%\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[left=3cm,top=3cm,right=3cm,nohead,nofoot]{geometry}
+%\usepackage{braket}
+%\newdate{date}{10}{05}{2013}
+%\date{\displaydate{date}}
+
+\begin{document}
+
+\begin{center}
+\huge
+Determinación de la influencia de las condiciones observacionales sobre la degradación de la información de redshift en Observaciones simuladas de DESI.\\
+\vspace{3mm}
+\Large Sergio David Lobo Bolaño
+
+\large
+201218661
+
+\vspace{2mm}
+\Large
+Director: Jaime Ernesto Forero-Romero
+
+
+\vspace{2mm}
+
+\today
+\end{center}
+
+
+\section{Introducción}
+
+%General
+La expansión acelerada del universo es uno de los fenómenos de mayor importancia en la astrofísica, y en general en toda la física moderna, a tal punto que impulsa gran parte de la investigación en cosmología observacional \cite{Nord:2016plv}. Para aumentar nuestro conocimiento en este campo, el instrumento DESI (Dark Energy Scpectroscopic Instrument) se usará para conducir un mapeo de 5 años que cubrirá 14000 deg $^2$ \cite{Aghamousa:2016zmz}. El mapeo hará observaciones espectroscópicas de cuatro clases distintas de fuentes extragalácticas:
+
+muestra de galaxias brillantes (BGS), galaxias rojas luminosas (LRGs), galaxias de lineas de emisión de formación estelar (ELGs), y objetos cuasi-estelares (QSOs) \cite{Aghamousa:2016zmz}. El instrumento DESI espectrógrafo capaz de tomar hasta 5000 espectros simultáneos en un rango de 360 nm a 980 nm \cite{Aghamousa:2016sne}. 
+
+Las LRGs serán medidas hasta $z = 1.0$, para explorar el universo a un corrimiento al rojo incluso mayor, DESI tendrá como objetivo ELGs de hasta $z = 1.7$. Los Quásares serán observados como señales directas de la distribución de materia oscura subyacente y, a mayores corrimientos, ($2.1<z<3.5$), por las características de absorción del bosque de Ly-$\alpha$ en sus espectros \cite{Aghamousa:2016zmz}. 
+
+Antes de comenzar a funcionar, DESI necesita de simulaciones para su diseño, desarrollo y operación. Algunas de estas simulaciones se enfocan en aspectos individuales como la optimización de piezas de hardware, otras simulaciones proporcionan datos de prueba para el desarrollo de la extracción espectral antes de obtener datos reales \cite{Aghamousa:2016sne}. En este proyecto en particular se usarán los resultados de las simulaciones de los corrimientos al rojo de los diferentes tipos de galaxias para compararlos con los que mediría DESI desde tierra, y encontrar la relación entre el real (simulado) y el observado (también simulado), atribuyéndole las diferencias entre ambos a las condiciones observacionales tales como el telescopio, el tiempo de exposición, luz de la luna, etc. 
+
+La relación entre el corrimiento al rojo real (simulado) y el observado (simulado) se encontrará usando algoritmos de machine learning apropiados para el problema de regresión \cite{bishop2006pattern}. Por tal razón, se escogerán tres algoritmos distintos los cuales se entrenarán, afinarán y validarán para luego escoger cuál describe mejor la relación entre ambos corrimientos, y así poder 'calibrar' el instrumento para sus futuras observaciones reales. El problema a tratar es entonces uno de aprendizaje supervisado en donde se entrenará cada algoritmo con los datos de redshift real, simulado y los parámetros mencionados anteriormente. Se espera entonces encontrar la 'función' que mapea el redshift observado al real a partir del valor de las diferentes condiciones observacionales (variables de entrada). 
+
+%DESI
+
+
+%Machine learning
+
+%Introducción a la propuesta de Monografía. Debe incluir un breve resumen del estado del arte del problema a tratar. También deben aparecer citadas todas las referencias de la bibliografía (a menos de que se citen más adelante, en los objetivos o metodología, por ejemplo)
+
+
+
+\section{Objetivo General}
+
+%Objetivo general del trabajo. Empieza con un verbo en infinitivo.
+
+Determinar la influencia de las condiciones observacionales sobre la degradación de la información de redshift en Observaciones simuladas de DESI, mediante el uso de algoritmos de machine learning
+
+\section{Objetivos Específicos}
+
+%Objetivos específicos del trabajo. Empiezan con un verbo en infinitivo.
+
+\begin{itemize}
+	\item Analizar y preprocesar los datos de entrada y salida 
+	\item Seleccionar 3 tipos de algoritmos para implementar en los datos.
+	\item Entrenar y validar los algoritmos de aprendizaje supervisado con los datos de la simulación
+	\item Comparar los resultados de los diferentes algoritmos para seleccionar el que mejores resultados obtenga
+\end{itemize}
+
+\section{Metodología}
+
+%Exponer DETALLADAMENTE la metodología que se usará en la Monografía. 
+
+%Monografía teórica o computacional: ¿Cómo se harán los cálculos teóricos? ¿Cómo se harán las simulaciones? ¿Qué requerimientos computacionales se necesitan? ¿Qué espacios físicos o virtuales se van a utilizar?
+
+%Monografía experimental: Recordar que para ser aprobada, los aparatos e insumos experimentales que se usarán en la Monografía deben estar previamente disponibles en la Universidad, o garantizar su disponibilidad para el tiempo en el que se realizará la misma. ¿Qué montajes experimentales se van a usar y que material se requiere? ¿En qué espacio físico se llevarán a cabo los experimentos? Si se usan aparatos externos, ¿qué permisos se necesitan? Si hay que realizar pagos a terceros, ¿cómo se financiará esto?
+
+Esta monografía es de carácter computacional. Los datos serán tomados de las simulaciones realizadas en el proyecto DESI y recolectados por el profesor Jaime E. Forero-Romero y se usarán recursos computacionales propios y los dispuestos por la universidad en forma física y virtual (cluster). Para seleccionar los algoritmos a utilizar se realizará una investigación corta que permita definir las mejor opciones capaces de ajustarse a los datos y su facilidad de implementación. El problema a resolver es de tipo regresión y aprendizaje supervisado, por lo que el espacio de algoritmos se restringe a estas dos características. El entrenamiento y validación de los algoritmos se realizarán de acuerdo a la investigación anterior, por lo cual se deberán preprocesar los datos según lo requiera cada algoritmo. El ajuste y validación de los parámetros de cada modelo se realizará mediante validación cruzada y búsqueda exhaustiva. A partir de métricas de regresión se seleccionará finalmente el algoritmo que mejor generaliza sus resultados. El trabajo será realizado por el estudiante guiado por el profesor en dónde se revisarán los avances del proyecto semana a semana en una reunión previamente programada. 
+\section{Cronograma}
+
+\begin{table}[htb]
+	\begin{tabular}{|c|cccccccccccccccc| }
+	\hline
+	Tareas $\backslash$ Semanas & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16  \\
+	\hline
+	1 & X & X &   &   &   &   &   &  &  &   &   &   &   &   &   &   \\
+	2 &  X & X & X &   &  &  &  &   &   &  &  &  &   &  &  &   \\
+	3 &   &   &   & X & X  &   &   &  &   &   &   &  &   &   &  &   \\
+	4 &  &  &  & X & X & X &  &  &  &  &   &   &   &   &   &   \\
+	5 &  &   &   &   &  &   &  X & X  & &   &   &  &   &   &  &   \\
+	6 &  &  &   &   &   &   & X  & X & X &   &   &   &   &   &   &   \\
+	7 &   &  &  &   &  &  &  &   &   & X & X &  &  &  &  &   \\
+	8 &   &   &   &  &   &   &   &  &   & X  &  X & X &  &   &  &   \\
+	9 &  &  &  &  &  &  &  &  &  & &   &   &  X &  X & X  &   \\
+	10 &   &   &   &   &  &   &  X & X  &  &   &   & X &  X & X  & X &  X \\
+	\hline
+	\end{tabular}
+\end{table}
+\vspace{1mm}
+
+\begin{itemize}
+	\item Tarea 1:  Análisis preliminar y preprocesamiento de los datos
+	\item Tarea 2: Investigación bibliográfica sobre algoritmos de machine learning adecuados
+	\item Tarea 3: Entrenamiento Algoritmo 1
+	\item Tarea 4: Validación Algoritmo  1 y selección de modelo
+	\item Tarea 5: Entrenamiento Algoritmo 2
+	\item Tarea 6: Validación Algoritmo  2 y selección de modelo
+	\item Tarea 7: Entrenamiento Algoritmo 3
+	\item Tarea 8: Validación Algoritmo  3 y selección de modelo
+	\item Tarea 9: Comparación y selección de modelos 
+	\item Tarea 10: Preparaición de documento y presentación
+\end{itemize}
+
+\section{Personas Conocedoras del Tema}
+
+%Nombres de por lo menos 3 profesores que conozcan del tema. Uno de ellos debe ser profesor de planta de la Universidad de los Andes.
+
+\begin{itemize}
+
+	\item Beatriz Eugenia Sabogal Martínez (Departamento de Física, Universidad de los Andes) 
+	
+	\item Andres Gonzalez Mancera (Departamento de Ingeniería Mecánica, Universidad de los Andes)
+
+\end{itemize}
+
+\bibliographystyle{ieeetr}
+\bibliography{bib}
+
+
+
+
+\section*{Firma del Director}
+\vspace{1.5cm}
+
+
+
+\end{document} 
