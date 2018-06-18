@@ -46,9 +46,9 @@ en este campo, el instrumento DESI (Dark Energy Scpectroscopic
 Instrument) se usará para conducir un mapeo durante 5 años que cubrirá
 un tercio del cielo \cite{Aghamousa:2016zmz}. El mapeo hará observaciones
 espectroscópicas de cuatro clases distintas de fuentes
-extragalácticas:   muestra de galaxias brillantes (BGS), galaxias rojas luminosas (LRGs), galaxias de lineas de emisión de formación estelar (ELGs), y objetos cuasi-estelares (QSOs) \cite{Aghamousa:2016zmz}. El instrumento DESI espectrógrafo capaz de tomar hasta 5000 espectros simultáneos en un rango de 360 nm a 980 nm \cite{Aghamousa:2016sne}. 
+extragalácticas:   muestra de galaxias brillantes (BGS), galaxias rojas luminosas (LRGs), galaxias de lineas de emisión de formación estelar (ELGs), y objetos cuasi-estelares (QSOs) \cite{Aghamousa:2016zmz}. El instrumento DESI es un espectrógrafo capaz de tomar hasta 5000 espectros simultáneos en un rango de 360 nm a 980 nm \cite{Aghamousa:2016sne}. 
 
-Las LRGs serán medidas hasta $z = 1.0$, para explorar el universo a un corrimiento al rojo incluso mayor, DESI tendrá como objetivo ELGs de hasta $z = 1.7$. Los Quásares serán observados como señales directas de la distribución de materia oscura subyacente y, a mayores corrimientos, ($2.1<z<3.5$), por las características de absorción del bosque de Ly-$\alpha$ en sus espectros \cite{Aghamousa:2016zmz}. 
+Las LRGs serán medidas hasta $z = 1.0$, para explorar el universo a un corrimiento al rojo incluso mayor, DESI tendrá como objetivo ELGs de hasta $z = 1.7$. Los Quásares serán observados como señales directas de la distribución de materia oscura subyacente y, a mayores corrimientos, $2.1<z<3.5$, por las características de absorción del bosque de Ly-$\alpha$ en sus espectros \cite{Aghamousa:2016zmz}. 
 
 Antes de comenzar a funcionar, DESI necesita de simulaciones para su
 diseño, desarrollo y operación. Algunas de estas simulaciones se
@@ -67,7 +67,7 @@ de la luna, etc.
 La relación entre el corrimiento al rojo intr\'inseco de cada galaxia
 (simulado) y el observado (simulado) se encontrará usando algoritmos de machine
 learning apropiados para el problema de regresión
-\cite{bishop2006pattern}. Por tal razón, se escogerán tres algoritmos
+\cite{bishop2006pattern}, tales como regresión logística, SVRs y bosques de regresión, entre otros. Por tal razón, se escogerán tres algoritmos
 distintos los cuales se entrenarán, afinarán y validarán para luego
 escoger cuál describe mejor la relación entre ambos corrimientos, y
 así poder 'calibrar' el instrumento para sus futuras observaciones
@@ -155,10 +155,12 @@ al desarrollo del proyecto de colaboración internacional DESI. Este trabajo no 
 	4 &  &  &  & X & X & X &  &  &  &  &   &   &   &   &   &   \\
 	5 &  &   &   &   &  &   &  X & X  & &   &   &  &   &   &  &   \\
 	6 &  &  &   &   &   &   & X  & X & X &   &   &   &   &   &   &   \\
-	7 &   &  &  &   &  &  &  &   &   & X & X &  &  &  &  &   \\
-	8 &   &   &   &  &   &   &   &  &   & X  &  X & X &  &   &  &   \\
-	9 &  &  &  &  &  &  &  &  &  & &   &   &  X &  X & X  &   \\
-	10 &   &   &   &   &  &   &  X & X  &  &   &   & X &  X & X  & X &  X \\
+	7 &   &   &   &   &  &   &  X & X  &  &   &   &  &   &   &  &   \\	
+	8 &   &  &  &   &  &  &  &   &   & X & X &  &  &  &  &   \\
+	9 &   &   &   &  &   &   &   &  &   & X  &  X & X &  &   &  &   \\
+	10 &  &  &  &  &  &  &  &  &  & &   &   &  X &  X & X  &   \\
+	11 &   &   &   &   &  &   &  X & X  &  &   &   & X &  X & X  & X &  X \\
+
 	\hline
 	\end{tabular}
 \end{table}
@@ -171,10 +173,12 @@ al desarrollo del proyecto de colaboración internacional DESI. Este trabajo no 
 	\item Tarea 4: Validación Algoritmo  1 y selección de modelo
 	\item Tarea 5: Entrenamiento Algoritmo 2
 	\item Tarea 6: Validación Algoritmo  2 y selección de modelo
-	\item Tarea 7: Entrenamiento Algoritmo 3
-	\item Tarea 8: Validación Algoritmo  3 y selección de modelo
-	\item Tarea 9: Comparación y selección de modelos 
-	\item Tarea 10: Preparaición de documento y presentación
+	\item Tarea 7: Preparación de documento y presentación 30\%.
+	\item Tarea 8: Entrenamiento Algoritmo 3
+	\item Tarea 9: Validación Algoritmo  3 y selección de modelo
+	\item Tarea 10: Comparación y selección de modelos 
+	\item Tarea 11: Preparaición de documento y presentación
+ 
 \end{itemize}
 
 \section{Personas Conocedoras del Tema}
