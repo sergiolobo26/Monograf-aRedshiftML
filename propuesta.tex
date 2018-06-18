@@ -7,6 +7,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage[left=3cm,top=3cm,right=3cm,nohead,nofoot]{geometry}
+
 %\usepackage{braket}
 %\newdate{date}{10}{05}{2013}
 %\date{\displaydate{date}}
@@ -15,7 +16,8 @@
 
 \begin{center}
 \huge
-Determinación de la influencia de las condiciones observacionales sobre la degradación de la informaci\'on de corrimiento al rojo en observaciones simuladas de DESI.\\
+
+Determinación de la influencia de las condiciones observacionales sobre el corrimiento al rojo en observaciones simuladas de DESI\\
 \vspace{3mm}
 \Large Sergio David Lobo Bolaño
 
@@ -98,12 +100,12 @@ de DESI, mediante el uso de algoritmos de machine learning
 %Objetivos específicos del trabajo. Empiezan con un verbo en infinitivo.
 
 \begin{itemize}
-	\item Analizar y preprocesar los datos de entrada y salida.
-	\item Seleccionar 3 tipos de algoritmos para implementar en los datos.
+	\item Analizar y preprocesar los datos de entrada y salida de acuerdo al significado físico de cada variable
+	\item Seleccionar 3 tipos de algoritmos de aprendizaje autónomo para implementar en los datos
 	\item Entrenar y validar los algoritmos de aprendizaje
-          supervisado con los datos de la simulación.
+          supervisado con los datos de la simulación
 	\item Comparar los resultados de los diferentes algoritmos
-          para seleccionar el que mejores resultados obtenga .
+          para seleccionar el que mejores resultados obtenga 
 \end{itemize}
 
 \section{Metodología}
@@ -118,8 +120,8 @@ Esta monografía es de carácter computacional. Los datos serán tomados
 de las simulaciones realizadas en el proyecto DESI y recolectados por
 el profesor Jaime E. Forero-Romero y se usarán recursos
 computacionales propios y los dispuestos por la universidad en forma
-física y virtual (cluster). Para seleccionar los algoritmos a utilizar
-se realizará una investigación corta que permita definir las mejor
+física y virtual (cluster). Los algoritmos se escribirán en Python y R. 
+Para seleccionar los algoritmos a utilizar se realizará una investigación corta que permita definir las mejores
 opciones capaces de ajustarse a los datos y su facilidad de
 implementación. El problema a resolver es de tipo regresión y
 aprendizaje supervisado, por lo que el espacio de algoritmos se
@@ -132,7 +134,14 @@ exhaustiva. A partir de métricas de regresión se seleccionará
 finalmente el algoritmo que mejor generaliza sus resultados. El
 trabajo será realizado por el estudiante guiado por el profesor en
 dónde se revisarán los avances del proyecto semana a semana en una
-reunión previamente programada . 
+reunión previamente programada. 
+
+\section{Consideraciones Éticas}
+Los datos utilizados en este proyecto serán recolectados por el Profesor Jaime E. Forero-Romero, director de 
+este proyecto, quien hace parte de la colaboración internacional del proyecto DESI. Así mismo, los datos serán utilizados
+en este trabajo únicamente con los motivos de desarrollar el algoritmo anteriormente mencionado y contribuir 
+al desarrollo del proyecto de colaboración internacional DESI. Este trabajo no debe pasar a estudio del comité de
+ética de la Facultad de Ciencias. 
 \section{Cronograma}
 
 \begin{table}[htb]
