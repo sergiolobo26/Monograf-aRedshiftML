@@ -1,8 +1,9 @@
 
------------ Galaxy-LRG file --------------------
+----------- Description --------------------
 
-We have the true and tar files. First we are going to save the file
-with only this type of galaxies. 
+We have the true and tar files. First we are going to save the files
+with the diferent galaxy types.
+
 
 
 
