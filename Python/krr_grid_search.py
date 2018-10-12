@@ -1,16 +1,24 @@
 from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import learning_curve
 from sklearn.kernel_ridge import KernelRidge
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from numpy import *
-import fitsio
-from sklearn.externals import joblib
+from sklearn.metrics import r2_score
+from astropy.io import fits
+
+#from sklearn.externals import joblib
+
+def import_data(true_path, tar_path):
+    
+    BGS_true = fitsio.FITS(true_path)
+    BGS_tar = fitsio.FITS(tar_path)
+    
+    return 
+
 
 print('Importing BGS data')
-BGS_true = fitsio.FITS('/home/sd.lobo251/Documents/dc17b/BGS_files/BGS_true_file.fits')
-BGS_tar = fitsio.FITS('/home/sd.lobo251/Documents/dc17b/BGS_files/BGS_tar_file.fits')
+
 
 
 print('creating the fuxes array')
@@ -35,7 +43,7 @@ flux_names = ['FLUX_G', 'FLUX_R', 'FLUX_Z',  'FLUX_W1', 'FLUX_W2']
 #changing flux por log(flux)
 for name in flux_names:
     fluxes[name] = log10(fluxes[name])
-    
+fluxes['alpha'] = log10(fluxes['alpha'])
 
 def transform_to_array(rec_array):
     
@@ -63,19 +71,18 @@ def omit_columns_of_array(columns_to_omit, x_array):
     return x_array[:, n]
 
 
-X_entrada, dict_of_names = transform_to_array(fluxes[0:500000][['FLUX_G', 'FLUX_R', 'FLUX_Z', 'FLUX_W1', 'FLUX_W2',  'Z', 'TRUEZ' ]])
-y_entrada = fluxes[0:500000]['alpha']
+X_entrada, dict_of_names = transform_to_array(fluxes[0:100000][['FLUX_G', 'FLUX_R', 'FLUX_Z', 'FLUX_W1', 'FLUX_W2',  'Z']])
+y_entrada = fluxes[0:100000]['TRUEZ']
 
 z_col_idx = dict_of_names['Z']
-trueZ_col_idx = dict_of_names['TRUEZ']
 
-X_train_i, X_test_i, y_train, y_test = train_test_split(X_entrada, y_entrada , test_size = 0.3, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X_entrada, y_entrada , test_size = 0.2, random_state=0)
 
-Z_train = X_train_i[:, [z_col_idx, trueZ_col_idx]]
-Z_test = X_test_i[:, [z_col_idx, trueZ_col_idx]]
+Z_train = reshape(X_train[:, [z_col_idx]], (len(X_train)))
+Z_test = reshape(X_test[:, [z_col_idx]], (len(X_test)))
 
-X_train = omit_columns_of_array([z_col_idx, trueZ_col_idx], X_train_i)
-X_test = omit_columns_of_array([z_col_idx, trueZ_col_idx], X_test_i)
+#X_train = omit_columns_of_array([trueZ_col_idx], X_train_i)
+#X_test = omit_columns_of_array([trueZ_col_idx], X_test_i)
 
 #scale
 #y_train = reshape(y_train, (len(y_train), 1))
@@ -91,9 +98,9 @@ best_parameters = {'r2':0, 'neg_mean_squared_error':0, 'explained_variance':0}
 for score in scores:
     print("# Tuning hyper-parameters for %s" % score)
     print()
-    clf = GridSearchCV(KernelRidge(kernel='rbf', gamma=0.1), cv=3,
-                  param_grid={"alpha": [1e0, 0.1],
-                              "gamma": logspace(-2, 2, 3)}, n_jobs=8, refit=True, verbose=1)
+    clf = GridSearchCV(KernelRidge(kernel='rbf', gamma=0.1), cv=2, n_jobs = 6,
+                  param_grid={"alpha": [0.1, 0.5],
+                              "gamma": [0.1, 1], 'kernel':['rbf', 'poly']}, refit=True, verbose=1)
     
     clf.fit(X_train, y_train)
 
@@ -110,9 +117,6 @@ for score in scores:
         print("%0.3f (+/-%0.03f) for %r"
               % (mean, std * 2, params))
     print()
-
-    print("Detailed classification report:")
-    print()
     print("The model is trained on the full development set.")
     print("The scores are computed on the full evaluation set.")
     print()
@@ -121,15 +125,16 @@ for score in scores:
     print()
     
 best_model = clf.best_estimator_
-joblib.dump(best_model, 'best_krr.pkl', compress=1)
+#joblib.dump(best_model, 'best_krr.pkl', compress=1)
 
 y_pred = best_model.predict(X_test)
+y_train_pred = best_model.predict(X_train)
 print('converting to TRUEZ - testing')
-predicted_redshifts_test = multiply(y_pred, Z_test[:, 0])
+#predicted_redshifts_test = multiply(y_pred, Z_test[:, 0])
 print('converting to TRUEZ - training')
-predicted_redshifts_train = multiply(best_model.predict(X_train), Z_train[:, 0])
-savetxt('krr_train.out', (predicted_redshifts_train, Z_train[:, 1]))
-savetxt('krr_test.out', (predicted_redshifts_test, Z_test[:, 1]))
+#predicted_redshifts_train = multiply(best_model.predict(X_train), Z_train[:, 0])
+savetxt('krr_train.out', (y_train_pred, y_train, Z_train))
+savetxt('krr_test.out', (y_pred, y_test, Z_test))
 print('-------- Done ---------')
 
 
