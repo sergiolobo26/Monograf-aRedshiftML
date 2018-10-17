@@ -111,7 +111,7 @@ def main():
         fluxes[name] = log10(fluxes[name])
     fluxes['alpha'] = log10(fluxes['alpha'])
 
-    n_data_points = [100, 1000, 5000, 10000]
+    n_data_points = [10, 100]
     fit_time_per_n = [[] for i in range(len(n_data_points))]
     predict_time_per_n = [[] for i in range(len(n_data_points))]
     n_repetitions = 3
