@@ -1,0 +1,97 @@
+
+Importing BGS data, generating the fluxes array
+
+
+computing Log Flux, Log Alpha
+
+Generating train-test set for 100000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'alpha': 0.0001, 'gamma': 0.2, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.986 (+/-0.002) for {'alpha': 0.001, 'gamma': 0.1, 'kernel': 'rbf'}
+0.988 (+/-0.002) for {'alpha': 0.001, 'gamma': 0.2, 'kernel': 'rbf'}
+0.987 (+/-0.002) for {'alpha': 0.0001, 'gamma': 0.1, 'kernel': 'rbf'}
+0.989 (+/-0.002) for {'alpha': 0.0001, 'gamma': 0.2, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.990035139039
+
+Saving Model to krr_model_0
+-----Done for n = 100000-----
+Generating train-test set for 100000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'alpha': 0.001, 'gamma': 0.2, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.986 (+/-0.001) for {'alpha': 0.001, 'gamma': 0.1, 'kernel': 'rbf'}
+0.988 (+/-0.002) for {'alpha': 0.001, 'gamma': 0.2, 'kernel': 'rbf'}
+0.987 (+/-0.002) for {'alpha': 0.0001, 'gamma': 0.1, 'kernel': 'rbf'}
+0.987 (+/-0.004) for {'alpha': 0.0001, 'gamma': 0.2, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.98770826809
+
+Saving Model to krr_model_1
+-----Done for n = 100000-----
+Generating train-test set for 100000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'alpha': 0.001, 'gamma': 0.2, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.987 (+/-0.001) for {'alpha': 0.001, 'gamma': 0.1, 'kernel': 'rbf'}
+0.988 (+/-0.002) for {'alpha': 0.001, 'gamma': 0.2, 'kernel': 'rbf'}
+0.987 (+/-0.003) for {'alpha': 0.0001, 'gamma': 0.1, 'kernel': 'rbf'}
+0.987 (+/-0.003) for {'alpha': 0.0001, 'gamma': 0.2, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.989899316571
+
+Saving Model to krr_model_2
+-----Done for n = 100000-----
+
+-----------------------------------Results--------------------------------------------
+Time results after 3 repetitions, n_jobs = 16
+n_datos:  [100000]
+
+fit_time mean:  [ 1962.3922]
+fit_time error:  [ 14.8882] 
+
+predict_time mean:  [ 38.2788]
+predict_time error:  [ 0.0156] 
+
+Total run time: 6611.55 s
+------------------------------------ Done --------------------------------------------

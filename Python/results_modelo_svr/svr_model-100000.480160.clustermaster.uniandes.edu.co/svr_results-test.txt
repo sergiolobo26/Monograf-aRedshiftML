@@ -1,0 +1,112 @@
+
+Importing BGS data, generating the fluxes array
+
+
+computing Log Flux, Log Alpha
+
+Generating train-test set for 100000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'gamma': 0.1, 'C': 1, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.877 (+/-0.001) for {'gamma': 0.001, 'C': 1, 'kernel': 'rbf'}
+0.927 (+/-0.011) for {'gamma': 0.1, 'C': 1, 'kernel': 'rbf'}
+0.848 (+/-0.017) for {'gamma': 1, 'C': 1, 'kernel': 'rbf'}
+0.896 (+/-0.001) for {'gamma': 0.001, 'C': 10, 'kernel': 'rbf'}
+0.924 (+/-0.010) for {'gamma': 0.1, 'C': 10, 'kernel': 'rbf'}
+0.870 (+/-0.013) for {'gamma': 1, 'C': 10, 'kernel': 'rbf'}
+0.898 (+/-0.006) for {'gamma': 0.001, 'C': 100, 'kernel': 'rbf'}
+0.922 (+/-0.007) for {'gamma': 0.1, 'C': 100, 'kernel': 'rbf'}
+0.868 (+/-0.020) for {'gamma': 1, 'C': 100, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.927591932805
+
+Saving Model to svr_model_0
+-----Done for n = 100000-----
+Generating train-test set for 100000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'gamma': 0.1, 'C': 1, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.878 (+/-0.002) for {'gamma': 0.001, 'C': 1, 'kernel': 'rbf'}
+0.928 (+/-0.007) for {'gamma': 0.1, 'C': 1, 'kernel': 'rbf'}
+0.859 (+/-0.020) for {'gamma': 1, 'C': 1, 'kernel': 'rbf'}
+0.892 (+/-0.002) for {'gamma': 0.001, 'C': 10, 'kernel': 'rbf'}
+0.919 (+/-0.019) for {'gamma': 0.1, 'C': 10, 'kernel': 'rbf'}
+0.859 (+/-0.010) for {'gamma': 1, 'C': 10, 'kernel': 'rbf'}
+0.902 (+/-0.003) for {'gamma': 0.001, 'C': 100, 'kernel': 'rbf'}
+0.909 (+/-0.006) for {'gamma': 0.1, 'C': 100, 'kernel': 'rbf'}
+0.861 (+/-0.020) for {'gamma': 1, 'C': 100, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.921562199331
+
+Saving Model to svr_model_1
+-----Done for n = 100000-----
+Generating train-test set for 100000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'gamma': 0.1, 'C': 1, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.879 (+/-0.003) for {'gamma': 0.001, 'C': 1, 'kernel': 'rbf'}
+0.926 (+/-0.019) for {'gamma': 0.1, 'C': 1, 'kernel': 'rbf'}
+0.847 (+/-0.008) for {'gamma': 1, 'C': 1, 'kernel': 'rbf'}
+0.898 (+/-0.005) for {'gamma': 0.001, 'C': 10, 'kernel': 'rbf'}
+0.921 (+/-0.015) for {'gamma': 0.1, 'C': 10, 'kernel': 'rbf'}
+0.868 (+/-0.009) for {'gamma': 1, 'C': 10, 'kernel': 'rbf'}
+0.901 (+/-0.005) for {'gamma': 0.001, 'C': 100, 'kernel': 'rbf'}
+0.891 (+/-0.018) for {'gamma': 0.1, 'C': 100, 'kernel': 'rbf'}
+0.853 (+/-0.012) for {'gamma': 1, 'C': 100, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.933033094116
+
+Saving Model to svr_model_2
+-----Done for n = 100000-----
+
+-----------------------------------Results--------------------------------------------
+Time results after 3 repetitions, n_jobs = 16
+n_datos:  [100000]
+
+fit_time mean:  [ 83.9826]
+fit_time error:  [ 48.8144] 
+
+predict_time mean:  [ 0.2668]
+predict_time error:  [ 0.0057] 
+
+Total run time: 268.55 s
+------------------------------------ Done --------------------------------------------

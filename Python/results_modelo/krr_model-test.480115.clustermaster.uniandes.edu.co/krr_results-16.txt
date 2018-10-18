@@ -1,0 +1,131 @@
+
+Importing BGS data, generating the fluxes array
+
+
+computing Log Flux, Log Alpha
+
+Generating train-test set for 20000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'gamma': 0.1, 'alpha': 0.001, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.980 (+/-0.006) for {'gamma': 0.1, 'alpha': 0.01, 'kernel': 'rbf'}
+0.979 (+/-0.008) for {'gamma': 1, 'alpha': 0.01, 'kernel': 'rbf'}
+0.983 (+/-0.005) for {'gamma': 0.1, 'alpha': 0.001, 'kernel': 'rbf'}
+0.976 (+/-0.011) for {'gamma': 1, 'alpha': 0.001, 'kernel': 'rbf'}
+0.982 (+/-0.006) for {'gamma': 0.1, 'alpha': 0.0001, 'kernel': 'rbf'}
+0.968 (+/-0.022) for {'gamma': 1, 'alpha': 0.0001, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.980677089517
+
+Saving Model to krr_model_0
+-----Done for n = 20000-----
+Generating train-test set for 20000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'gamma': 0.1, 'alpha': 0.001, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.980 (+/-0.006) for {'gamma': 0.1, 'alpha': 0.01, 'kernel': 'rbf'}
+0.979 (+/-0.008) for {'gamma': 1, 'alpha': 0.01, 'kernel': 'rbf'}
+0.983 (+/-0.005) for {'gamma': 0.1, 'alpha': 0.001, 'kernel': 'rbf'}
+0.976 (+/-0.011) for {'gamma': 1, 'alpha': 0.001, 'kernel': 'rbf'}
+0.982 (+/-0.006) for {'gamma': 0.1, 'alpha': 0.0001, 'kernel': 'rbf'}
+0.968 (+/-0.022) for {'gamma': 1, 'alpha': 0.0001, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.980677089517
+
+Saving Model to krr_model_1
+-----Done for n = 20000-----
+Generating train-test set for 20000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'gamma': 0.1, 'alpha': 0.001, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.980 (+/-0.006) for {'gamma': 0.1, 'alpha': 0.01, 'kernel': 'rbf'}
+0.979 (+/-0.008) for {'gamma': 1, 'alpha': 0.01, 'kernel': 'rbf'}
+0.983 (+/-0.005) for {'gamma': 0.1, 'alpha': 0.001, 'kernel': 'rbf'}
+0.976 (+/-0.011) for {'gamma': 1, 'alpha': 0.001, 'kernel': 'rbf'}
+0.982 (+/-0.006) for {'gamma': 0.1, 'alpha': 0.0001, 'kernel': 'rbf'}
+0.968 (+/-0.022) for {'gamma': 1, 'alpha': 0.0001, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.980677089517
+
+Saving Model to krr_model_2
+-----Done for n = 20000-----
+Generating train-test set for 20000 data points 
+
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting model with n_jobs = 16
+
+
+Best parameters set found on development set:
+
+{'gamma': 0.1, 'alpha': 0.001, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.980 (+/-0.006) for {'gamma': 0.1, 'alpha': 0.01, 'kernel': 'rbf'}
+0.979 (+/-0.008) for {'gamma': 1, 'alpha': 0.01, 'kernel': 'rbf'}
+0.983 (+/-0.005) for {'gamma': 0.1, 'alpha': 0.001, 'kernel': 'rbf'}
+0.976 (+/-0.011) for {'gamma': 1, 'alpha': 0.001, 'kernel': 'rbf'}
+0.982 (+/-0.006) for {'gamma': 0.1, 'alpha': 0.0001, 'kernel': 'rbf'}
+0.968 (+/-0.022) for {'gamma': 1, 'alpha': 0.0001, 'kernel': 'rbf'}
+
+r2 score computed on the full evaluation set:
+
+0.980677089517
+
+Saving Model to krr_model_3
+-----Done for n = 20000-----
+
+-----------------------------------Results--------------------------------------------
+Time results after 4 repetitions, n_jobs = 16
+n_datos:  [20000]
+
+fit_time mean:  [ 81.9385]
+fit_time error:  [ 0.834] 
+
+predict_time mean:  [ 2.5127]
+predict_time error:  [ 0.2701] 
+
+Total run time: 393.05 s
+------------------------------------ Done --------------------------------------------
