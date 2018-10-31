@@ -1,0 +1,465 @@
+Importing BGS data
+creating the fuxes array
+Scaling data 
+
+# Tuning hyper-parameters for r2
+
+Fitting 2 folds for each of 8 candidates, totalling 16 fits
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py", line 350, in __call__
+    return self.func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 131, in __call__
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 131, in <listcomp>
+    return [func(*args, **kwargs) for func, args, kwargs in self.items]
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py", line 458, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/kernel_ridge.py", line 162, in fit
+    copy)
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/linear_model/ridge.py", line 152, in _solve_cholesky_kernel
+    overwrite_a=False)
+  File "/opt/anaconda3/lib/python3.6/site-packages/scipy/linalg/basic.py", line 178, in solve
+    overwrite_b=overwrite_b
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.6/multiprocessing/pool.py", line 119, in worker
+    result = (True, func(*args, **kwds))
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/_parallel_backends.py", line 359, in __call__
+    raise TransportableException(text, e_type)
+sklearn.externals.joblib.my_exceptions.TransportableException: TransportableException
+___________________________________________________________________________
+MemoryError                                        Thu Oct 11 13:50:30 2018
+PID: 13666                          Python 3.6.3: /opt/anaconda3/bin/python
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self=<sklearn.externals.joblib.parallel.BatchedCalls object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        self.items = [(<function _fit_and_score>, (KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), memmap([[ 0.54639569,  0.59868819,  0.64223401, ...-0.22629099, -0.33775054,
+          0.89647359]]), array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), {'score': <function _passthrough_scorer>}, array([40000, 40001, 40002, ..., 79997, 79998, 79999]), array([    0,     1,     2, ..., 39997, 39998, 39999]), 1, {'alpha': 0.1, 'gamma': 0.1, 'kernel': 'rbf'}), {'error_score': 'raise', 'fit_params': {}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'})]
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in <listcomp>(.0=<list_iterator object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        func = <function _fit_and_score>
+        args = (KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), memmap([[ 0.54639569,  0.59868819,  0.64223401, ...-0.22629099, -0.33775054,
+          0.89647359]]), array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), {'score': <function _passthrough_scorer>}, array([40000, 40001, 40002, ..., 79997, 79998, 79999]), array([    0,     1,     2, ..., 39997, 39998, 39999]), 1, {'alpha': 0.1, 'gamma': 0.1, 'kernel': 'rbf'})
+        kwargs = {'error_score': 'raise', 'fit_params': {}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'}
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py in _fit_and_score(estimator=KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), X=memmap([[ 0.54639569,  0.59868819,  0.64223401, ...-0.22629099, -0.33775054,
+          0.89647359]]), y=array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), scorer={'score': <function _passthrough_scorer>}, train=array([40000, 40001, 40002, ..., 79997, 79998, 79999]), test=array([    0,     1,     2, ..., 39997, 39998, 39999]), verbose=1, parameters={'alpha': 0.1, 'gamma': 0.1, 'kernel': 'rbf'}, fit_params={}, return_train_score='warn', return_parameters=False, return_n_test_samples=True, return_times=True, error_score='raise')
+    453 
+    454     try:
+    455         if y_train is None:
+    456             estimator.fit(X_train, **fit_params)
+    457         else:
+--> 458             estimator.fit(X_train, y_train, **fit_params)
+        estimator.fit = <bound method KernelRidge.fit of KernelRidge(alp...mma=0.1, kernel='rbf',
+      kernel_params=None)>
+        X_train = memmap([[-0.08820506,  0.12829064,  0.15553212, ...-0.22629099, -0.33775054,
+          0.89647359]])
+        y_train = array([0.27610666, 0.3057034 , 0.36560312, ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32)
+        fit_params = {}
+    459 
+    460     except Exception as e:
+    461         # Note fit time as time until error
+    462         fit_time = time.time() - start_time
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/kernel_ridge.py in fit(self=KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), X=array([[-0.08820506,  0.12829064,  0.15553212,  ... -0.22629099, -0.33775054,
+         0.89647359]]), y=array([[0.27610666],
+       [0.3057034 ],
+      ...0.5111008 ],
+       [0.37399644]], dtype=float32), sample_weight=None)
+    157             ravel = True
+    158 
+    159         copy = self.kernel == "precomputed"
+    160         self.dual_coef_ = _solve_cholesky_kernel(K, y, alpha,
+    161                                                  sample_weight,
+--> 162                                                  copy)
+        copy = False
+    163         if ravel:
+    164             self.dual_coef_ = self.dual_coef_.ravel()
+    165 
+    166         self.X_fit_ = X
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/linear_model/ridge.py in _solve_cholesky_kernel(K=array([[1.1       , 0.98341327, 0.43640561, ...,....., 0.78024341, 0.86991122,
+        1.1       ]]), y=array([[0.27610666],
+       [0.3057034 ],
+      ...0.5111008 ],
+       [0.37399644]], dtype=float32), alpha=array([0.1]), sample_weight=None, copy=False)
+    147         try:
+    148             # Note: we must use overwrite_a=False in order to be able to
+    149             #       use the fall-back solution below in case a LinAlgError
+    150             #       is raised
+    151             dual_coef = linalg.solve(K, y, sym_pos=True,
+--> 152                                      overwrite_a=False)
+    153         except np.linalg.LinAlgError:
+    154             warnings.warn("Singular matrix in solving dual problem. Using "
+    155                           "least-squares solution instead.")
+    156             dual_coef = linalg.lstsq(K, y)[0]
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/scipy/linalg/basic.py in solve(a=array([[1.1       , 0.98341327, 0.43640561, ...,....., 0.78024341, 0.86991122,
+        1.1       ]]), b=array([[0.27610666],
+       [0.3057034 ],
+      ...0.5111008 ],
+       [0.37399644]], dtype=float32), sym_pos=True, lower=False, overwrite_a=False, overwrite_b=False, debug=None, check_finite=True, assume_a='pos', transposed=False)
+    173             trans_conj = 'T' if r_or_c is float else 'H'
+    174         (_, _, _, _, _, _, _,
+    175          x, rcond, _, _, info) = gesvx(a1, b1,
+    176                                        trans=trans_conj,
+    177                                        overwrite_a=overwrite_a,
+--> 178                                        overwrite_b=overwrite_b
+        overwrite_b = False
+    179                                        )
+    180     elif _structure == 'sym':
+    181         sysvx, sysvx_lw = get_lapack_funcs(('sysvx', 'sysvx_lwork'), (a1, b1))
+    182         lwork = _compute_lwork(sysvx_lw, n, lower)
+
+MemoryError: 
+___________________________________________________________________________
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 699, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/opt/anaconda3/lib/python3.6/multiprocessing/pool.py", line 644, in get
+    raise self._value
+sklearn.externals.joblib.my_exceptions.TransportableException: TransportableException
+___________________________________________________________________________
+MemoryError                                        Thu Oct 11 13:50:30 2018
+PID: 13666                          Python 3.6.3: /opt/anaconda3/bin/python
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self=<sklearn.externals.joblib.parallel.BatchedCalls object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        self.items = [(<function _fit_and_score>, (KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), memmap([[ 0.54639569,  0.59868819,  0.64223401, ...-0.22629099, -0.33775054,
+          0.89647359]]), array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), {'score': <function _passthrough_scorer>}, array([40000, 40001, 40002, ..., 79997, 79998, 79999]), array([    0,     1,     2, ..., 39997, 39998, 39999]), 1, {'alpha': 0.1, 'gamma': 0.1, 'kernel': 'rbf'}), {'error_score': 'raise', 'fit_params': {}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'})]
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in <listcomp>(.0=<list_iterator object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        func = <function _fit_and_score>
+        args = (KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), memmap([[ 0.54639569,  0.59868819,  0.64223401, ...-0.22629099, -0.33775054,
+          0.89647359]]), array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), {'score': <function _passthrough_scorer>}, array([40000, 40001, 40002, ..., 79997, 79998, 79999]), array([    0,     1,     2, ..., 39997, 39998, 39999]), 1, {'alpha': 0.1, 'gamma': 0.1, 'kernel': 'rbf'})
+        kwargs = {'error_score': 'raise', 'fit_params': {}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'}
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py in _fit_and_score(estimator=KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), X=memmap([[ 0.54639569,  0.59868819,  0.64223401, ...-0.22629099, -0.33775054,
+          0.89647359]]), y=array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), scorer={'score': <function _passthrough_scorer>}, train=array([40000, 40001, 40002, ..., 79997, 79998, 79999]), test=array([    0,     1,     2, ..., 39997, 39998, 39999]), verbose=1, parameters={'alpha': 0.1, 'gamma': 0.1, 'kernel': 'rbf'}, fit_params={}, return_train_score='warn', return_parameters=False, return_n_test_samples=True, return_times=True, error_score='raise')
+    453 
+    454     try:
+    455         if y_train is None:
+    456             estimator.fit(X_train, **fit_params)
+    457         else:
+--> 458             estimator.fit(X_train, y_train, **fit_params)
+        estimator.fit = <bound method KernelRidge.fit of KernelRidge(alp...mma=0.1, kernel='rbf',
+      kernel_params=None)>
+        X_train = memmap([[-0.08820506,  0.12829064,  0.15553212, ...-0.22629099, -0.33775054,
+          0.89647359]])
+        y_train = array([0.27610666, 0.3057034 , 0.36560312, ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32)
+        fit_params = {}
+    459 
+    460     except Exception as e:
+    461         # Note fit time as time until error
+    462         fit_time = time.time() - start_time
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/kernel_ridge.py in fit(self=KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), X=array([[-0.08820506,  0.12829064,  0.15553212,  ... -0.22629099, -0.33775054,
+         0.89647359]]), y=array([[0.27610666],
+       [0.3057034 ],
+      ...0.5111008 ],
+       [0.37399644]], dtype=float32), sample_weight=None)
+    157             ravel = True
+    158 
+    159         copy = self.kernel == "precomputed"
+    160         self.dual_coef_ = _solve_cholesky_kernel(K, y, alpha,
+    161                                                  sample_weight,
+--> 162                                                  copy)
+        copy = False
+    163         if ravel:
+    164             self.dual_coef_ = self.dual_coef_.ravel()
+    165 
+    166         self.X_fit_ = X
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/linear_model/ridge.py in _solve_cholesky_kernel(K=array([[1.1       , 0.98341327, 0.43640561, ...,....., 0.78024341, 0.86991122,
+        1.1       ]]), y=array([[0.27610666],
+       [0.3057034 ],
+      ...0.5111008 ],
+       [0.37399644]], dtype=float32), alpha=array([0.1]), sample_weight=None, copy=False)
+    147         try:
+    148             # Note: we must use overwrite_a=False in order to be able to
+    149             #       use the fall-back solution below in case a LinAlgError
+    150             #       is raised
+    151             dual_coef = linalg.solve(K, y, sym_pos=True,
+--> 152                                      overwrite_a=False)
+    153         except np.linalg.LinAlgError:
+    154             warnings.warn("Singular matrix in solving dual problem. Using "
+    155                           "least-squares solution instead.")
+    156             dual_coef = linalg.lstsq(K, y)[0]
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/scipy/linalg/basic.py in solve(a=array([[1.1       , 0.98341327, 0.43640561, ...,....., 0.78024341, 0.86991122,
+        1.1       ]]), b=array([[0.27610666],
+       [0.3057034 ],
+      ...0.5111008 ],
+       [0.37399644]], dtype=float32), sym_pos=True, lower=False, overwrite_a=False, overwrite_b=False, debug=None, check_finite=True, assume_a='pos', transposed=False)
+    173             trans_conj = 'T' if r_or_c is float else 'H'
+    174         (_, _, _, _, _, _, _,
+    175          x, rcond, _, _, info) = gesvx(a1, b1,
+    176                                        trans=trans_conj,
+    177                                        overwrite_a=overwrite_a,
+--> 178                                        overwrite_b=overwrite_b
+        overwrite_b = False
+    179                                        )
+    180     elif _structure == 'sym':
+    181         sysvx, sysvx_lw = get_lapack_funcs(('sysvx', 'sysvx_lwork'), (a1, b1))
+    182         lwork = _compute_lwork(sysvx_lw, n, lower)
+
+MemoryError: 
+___________________________________________________________________________
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "krr_grid_search.py", line 99, in <module>
+    clf.fit(X_train, y_train)
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_search.py", line 639, in fit
+    cv.split(X, y, groups)))
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 789, in __call__
+    self.retrieve()
+  File "/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py", line 740, in retrieve
+    raise exception
+sklearn.externals.joblib.my_exceptions.JoblibMemoryError: JoblibMemoryError
+___________________________________________________________________________
+Multiprocessing exception:
+...........................................................................
+/home/sd.lobo251/Desktop/git/RedShiftML_/Python/krr_grid_search.py in <module>()
+     94     print()
+     95     clf = GridSearchCV(KernelRidge(kernel='rbf', gamma=0.1), cv=2, n_jobs = 6,
+     96                   param_grid={"alpha": [0.1, 0.5],
+     97                               "gamma": [0.1, 1], 'kernel':['rbf', 'poly']}, refit=True, verbose=1)
+     98     
+---> 99     clf.fit(X_train, y_train)
+    100 
+    101     print("Best parameters set found on development set:")
+    102     print()
+    103     print(clf.best_params_)
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_search.py in fit(self=GridSearchCV(cv=2, error_score='raise',
+       e...ain_score='warn',
+       scoring=None, verbose=1), X=array([[ 0.54639569,  0.59868819,  0.64223401,  ... -0.22629099, -0.33775054,
+         0.89647359]]), y=array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), groups=None, **fit_params={})
+    634                                   return_train_score=self.return_train_score,
+    635                                   return_n_test_samples=True,
+    636                                   return_times=True, return_parameters=False,
+    637                                   error_score=self.error_score)
+    638           for parameters, (train, test) in product(candidate_params,
+--> 639                                                    cv.split(X, y, groups)))
+        cv.split = <bound method _BaseKFold.split of KFold(n_splits=2, random_state=None, shuffle=False)>
+        X = array([[ 0.54639569,  0.59868819,  0.64223401,  ... -0.22629099, -0.33775054,
+         0.89647359]])
+        y = array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32)
+        groups = None
+    640 
+    641         # if one choose to see train score, "out" will contain train score info
+    642         if self.return_train_score:
+    643             (train_score_dicts, test_score_dicts, test_sample_counts, fit_time,
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self=Parallel(n_jobs=6), iterable=<generator object BaseSearchCV.fit.<locals>.<genexpr>>)
+    784             if pre_dispatch == "all" or n_jobs == 1:
+    785                 # The iterable was consumed all at once by the above for loop.
+    786                 # No need to wait for async callbacks to trigger to
+    787                 # consumption.
+    788                 self._iterating = False
+--> 789             self.retrieve()
+        self.retrieve = <bound method Parallel.retrieve of Parallel(n_jobs=6)>
+    790             # Make sure that we get a last message telling us we are done
+    791             elapsed_time = time.time() - self._start_time
+    792             self._print('Done %3i out of %3i | elapsed: %s finished',
+    793                         (len(self._output), len(self._output),
+
+---------------------------------------------------------------------------
+Sub-process traceback:
+---------------------------------------------------------------------------
+MemoryError                                        Thu Oct 11 13:50:30 2018
+PID: 13666                          Python 3.6.3: /opt/anaconda3/bin/python
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in __call__(self=<sklearn.externals.joblib.parallel.BatchedCalls object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        self.items = [(<function _fit_and_score>, (KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), memmap([[ 0.54639569,  0.59868819,  0.64223401, ...-0.22629099, -0.33775054,
+          0.89647359]]), array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), {'score': <function _passthrough_scorer>}, array([40000, 40001, 40002, ..., 79997, 79998, 79999]), array([    0,     1,     2, ..., 39997, 39998, 39999]), 1, {'alpha': 0.1, 'gamma': 0.1, 'kernel': 'rbf'}), {'error_score': 'raise', 'fit_params': {}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'})]
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/externals/joblib/parallel.py in <listcomp>(.0=<list_iterator object>)
+    126     def __init__(self, iterator_slice):
+    127         self.items = list(iterator_slice)
+    128         self._size = len(self.items)
+    129 
+    130     def __call__(self):
+--> 131         return [func(*args, **kwargs) for func, args, kwargs in self.items]
+        func = <function _fit_and_score>
+        args = (KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), memmap([[ 0.54639569,  0.59868819,  0.64223401, ...-0.22629099, -0.33775054,
+          0.89647359]]), array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), {'score': <function _passthrough_scorer>}, array([40000, 40001, 40002, ..., 79997, 79998, 79999]), array([    0,     1,     2, ..., 39997, 39998, 39999]), 1, {'alpha': 0.1, 'gamma': 0.1, 'kernel': 'rbf'})
+        kwargs = {'error_score': 'raise', 'fit_params': {}, 'return_n_test_samples': True, 'return_parameters': False, 'return_times': True, 'return_train_score': 'warn'}
+    132 
+    133     def __len__(self):
+    134         return self._size
+    135 
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_validation.py in _fit_and_score(estimator=KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), X=memmap([[ 0.54639569,  0.59868819,  0.64223401, ...-0.22629099, -0.33775054,
+          0.89647359]]), y=array([0.20854956, 0.28935397, 0.1626353 , ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32), scorer={'score': <function _passthrough_scorer>}, train=array([40000, 40001, 40002, ..., 79997, 79998, 79999]), test=array([    0,     1,     2, ..., 39997, 39998, 39999]), verbose=1, parameters={'alpha': 0.1, 'gamma': 0.1, 'kernel': 'rbf'}, fit_params={}, return_train_score='warn', return_parameters=False, return_n_test_samples=True, return_times=True, error_score='raise')
+    453 
+    454     try:
+    455         if y_train is None:
+    456             estimator.fit(X_train, **fit_params)
+    457         else:
+--> 458             estimator.fit(X_train, y_train, **fit_params)
+        estimator.fit = <bound method KernelRidge.fit of KernelRidge(alp...mma=0.1, kernel='rbf',
+      kernel_params=None)>
+        X_train = memmap([[-0.08820506,  0.12829064,  0.15553212, ...-0.22629099, -0.33775054,
+          0.89647359]])
+        y_train = array([0.27610666, 0.3057034 , 0.36560312, ..., ...7, 0.5111008 ,
+       0.37399644], dtype=float32)
+        fit_params = {}
+    459 
+    460     except Exception as e:
+    461         # Note fit time as time until error
+    462         fit_time = time.time() - start_time
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/kernel_ridge.py in fit(self=KernelRidge(alpha=0.1, coef0=1, degree=3, gamma=0.1, kernel='rbf',
+      kernel_params=None), X=array([[-0.08820506,  0.12829064,  0.15553212,  ... -0.22629099, -0.33775054,
+         0.89647359]]), y=array([[0.27610666],
+       [0.3057034 ],
+      ...0.5111008 ],
+       [0.37399644]], dtype=float32), sample_weight=None)
+    157             ravel = True
+    158 
+    159         copy = self.kernel == "precomputed"
+    160         self.dual_coef_ = _solve_cholesky_kernel(K, y, alpha,
+    161                                                  sample_weight,
+--> 162                                                  copy)
+        copy = False
+    163         if ravel:
+    164             self.dual_coef_ = self.dual_coef_.ravel()
+    165 
+    166         self.X_fit_ = X
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/sklearn/linear_model/ridge.py in _solve_cholesky_kernel(K=array([[1.1       , 0.98341327, 0.43640561, ...,....., 0.78024341, 0.86991122,
+        1.1       ]]), y=array([[0.27610666],
+       [0.3057034 ],
+      ...0.5111008 ],
+       [0.37399644]], dtype=float32), alpha=array([0.1]), sample_weight=None, copy=False)
+    147         try:
+    148             # Note: we must use overwrite_a=False in order to be able to
+    149             #       use the fall-back solution below in case a LinAlgError
+    150             #       is raised
+    151             dual_coef = linalg.solve(K, y, sym_pos=True,
+--> 152                                      overwrite_a=False)
+    153         except np.linalg.LinAlgError:
+    154             warnings.warn("Singular matrix in solving dual problem. Using "
+    155                           "least-squares solution instead.")
+    156             dual_coef = linalg.lstsq(K, y)[0]
+
+...........................................................................
+/opt/anaconda3/lib/python3.6/site-packages/scipy/linalg/basic.py in solve(a=array([[1.1       , 0.98341327, 0.43640561, ...,....., 0.78024341, 0.86991122,
+        1.1       ]]), b=array([[0.27610666],
+       [0.3057034 ],
+      ...0.5111008 ],
+       [0.37399644]], dtype=float32), sym_pos=True, lower=False, overwrite_a=False, overwrite_b=False, debug=None, check_finite=True, assume_a='pos', transposed=False)
+    173             trans_conj = 'T' if r_or_c is float else 'H'
+    174         (_, _, _, _, _, _, _,
+    175          x, rcond, _, _, info) = gesvx(a1, b1,
+    176                                        trans=trans_conj,
+    177                                        overwrite_a=overwrite_a,
+--> 178                                        overwrite_b=overwrite_b
+        overwrite_b = False
+    179                                        )
+    180     elif _structure == 'sym':
+    181         sysvx, sysvx_lw = get_lapack_funcs(('sysvx', 'sysvx_lwork'), (a1, b1))
+    182         lwork = _compute_lwork(sysvx_lw, n, lower)
+
+MemoryError: 
+___________________________________________________________________________
