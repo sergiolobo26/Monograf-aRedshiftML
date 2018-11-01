@@ -1,0 +1,63 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{emptypage}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathcomp}
+\usepackage{gensymb}
+\usepackage{tensor}
+\usepackage{tcolorbox}
+\usepackage{lmodern}
+\usepackage{wasysym}
+\setlength{\parindent}{2.0em}
+\setlength{\parskip}{0.6em}
+\renewcommand{\baselinestretch}{1.25}
+
+%\usepackage{tgschola}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=30mm,
+	right=30mm,
+	top=20mm,
+}
+
+\begin{document}
+
+\author{Sergio Lobo}
+\title{Draft: Calibration of DESI resdshift data using ML}
+\date{\today}
+
+\frontmatter
+\input{TeX_files/HojadePresentacion}
+\tableofcontents
+
+\mainmatter
+\include{./TeX_files/chapterIntro}
+\include{./TeX_files/chapter01}
+\include{./TeX_files/chapter00}
+\include{./TeX_files/chapter02}
+\include{./TeX_files/chapter04}
+%\include{./TeX_files/chapter05Colapso}
+
+
+
+
+
+
+
+
+\backmatter
+% bibliography, glossary and index would go here.
+\bibliographystyle{abbrv}
+\bibliography{referencias}
+
+\end{document}
