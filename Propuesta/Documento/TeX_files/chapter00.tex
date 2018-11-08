@@ -165,5 +165,24 @@ therefore, alpha have a value near 1 when the redshifts are along de 45-degree l
 		\includegraphics[height=3in]{TeX_files/Imagenes/BGS-FLUXRGZ-ALPHA}
 		\caption{}
 	\end{subfigure}
-	\caption{Relation between fluxes, TRUEZ and TARZ. (a) $\alpha$ as a function of W1 and W2 fluxes. (b)$\alpha$ as a function of G, R and Z fluxes }
+	\caption{Relation between fluxes, TRUEZ and TARZ. (a) $\alpha$ as a function of W1 and W2 fluxes. (b)$\alpha$ as a function of G, R and Z fluxes. $\log_{10}$ values presented.}
+	\label{fig:BGS-FLUX-ALPHA}
 \end{figure} 
+
+We see in Figure \ref{fig:BGS-FLUX-ALPHA} that each flux has a similar behaviour, however, they are dispersed in different values and present different minimum values. As the flux magnitude increases, $\alpha$ tends to equal 1, meaning that as the fluxes received by the instrument increases, the redshift measurements are closer to the expected real values. Therefore, the dispersion regions may contain the information necessary for the ML models to learn no predict better redshifts. To see the influence of the dispersion at low fluxes over $\alpha$, the cuts at different fluxes values in Figure \ref{fig:flux_cut_alpha} show the distribution of $\alpha$ at particular values of the fluxes. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{TeX_files/Imagenes/flux_cut_alpha}
+	\caption{Distribution of $\alpha$ at different cuts in the flux variable.}
+	\label{fig:flux_cut_alpha}
+\end{figure}
+
+The plots in Figure \ref{fig:flux_cut_alpha} are constructed by taking thin slices at fixed values of the fluxes in Figure \ref{fig:BGS-FLUX-ALPHA} and constructing the histogram of the points that lie within the slice. The first approximation is to fit the distribution to a Gaussian distribution and estimate its mean and variance. The relation between mean and fluxes is shown in Figure \ref{fig:media_alpha_flux}, were the green points indicate the mean of $\alpha$ for the slice taken at the given flux. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=1.0\linewidth]{TeX_files/Imagenes/media_alpha_flux}
+	\caption{Mean and standard error $\alpha$ for every Flux interval (slice).}
+	\label{fig:media_alpha_flux}
+\end{figure}
+
