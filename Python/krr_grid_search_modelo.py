@@ -30,8 +30,52 @@ def import_data(true_path, tar_path):
     fluxes = append_fields(fluxes, 'TRUEZ', array(BGS_true['TRUEZ']), usemask=False)
     fluxes = append_fields(fluxes, 'alpha', alpha, usemask=False)
     
+    #correcion de alphas y flujos, se eliminan todos con signos negativos
+
+    fluxG_sign = BGS_tar['FLUX_G'][:] >0
+    fluxR_sign = BGS_tar['FLUX_R'][:] >0
+    fluxZ_sign = BGS_tar['FLUX_Z'][:] >0
+    fluxW1_sign = BGS_tar['FLUX_W1'][:] >0
+    fluxW2_sign = BGS_tar['FLUX_W2'][:] >0
+
     #Se eliminan los alphas negativos. 
     fluxes = fluxes[alpha_sign]
+    alpha = alpha[alpha_sign]
+
+    fluxG_sign = fluxG_sign[alpha_sign]
+    fluxR_sign = fluxR_sign[alpha_sign]
+    fluxZ_sign = fluxZ_sign[alpha_sign]
+    fluxW1_sign = fluxW1_sign[alpha_sign]
+    fluxW2_sign = fluxW2_sign[alpha_sign]
+
+    fluxes = fluxes[fluxG_sign]
+    alpha = alpha[fluxG_sign]
+
+    fluxR_sign = fluxR_sign[fluxG_sign]
+    fluxZ_sign = fluxZ_sign[fluxG_sign]
+    fluxW1_sign = fluxW1_sign[fluxG_sign]
+    fluxW2_sign = fluxW2_sign[fluxG_sign]
+
+    fluxes = fluxes[fluxR_sign]
+    alpha = alpha[fluxR_sign]
+
+    fluxZ_sign = fluxZ_sign[fluxR_sign]
+    fluxW1_sign = fluxW1_sign[fluxR_sign]
+    fluxW2_sign = fluxW2_sign[fluxR_sign]
+
+    fluxes = fluxes[fluxZ_sign]
+    alpha = alpha[fluxZ_sign]
+
+    fluxW1_sign = fluxW1_sign[fluxZ_sign]
+    fluxW2_sign = fluxW2_sign[fluxZ_sign]
+
+    fluxes = fluxes[fluxW1_sign]
+    alpha = alpha[fluxW1_sign]
+
+    fluxW2_sign = fluxW2_sign[fluxW1_sign]
+
+    fluxes = fluxes[fluxW2_sign]
+    alpha = alpha[fluxW2_sign]
     return fluxes
 
 def transform_to_array(rec_array):
