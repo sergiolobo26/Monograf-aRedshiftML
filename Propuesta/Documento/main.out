@@ -1,26 +1,33 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.1.1}{DESI }{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Machine Learning}{chapter.1}% 3
-\BOOKMARK [0][-]{chapter.2}{Methodology}{}% 4
-\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.2}{Model classes}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.3}{Data sampling, train-validation-test}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.4}{Data Preprocessing}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.5}{Computational Resources analysis}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.6}{Model training, evaluation and testing}{chapter.2}% 10
-\BOOKMARK [0][-]{chapter.3}{Data}{}% 11
-\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.2}{Data descripcion}{chapter.3}% 13
-\BOOKMARK [2][-]{subsection.3.2.1}{Simulated expected results - truth file}{section.3.2}% 14
-\BOOKMARK [2][-]{subsection.3.2.2}{Simulated Observations - target file}{section.3.2}% 15
-\BOOKMARK [1][-]{section.3.3}{Overview of the dataset}{chapter.3}% 16
-\BOOKMARK [2][-]{subsection.3.3.1}{Redshift relations}{section.3.3}% 17
-\BOOKMARK [2][-]{subsection.3.3.2}{Spectral types}{section.3.3}% 18
-\BOOKMARK [2][-]{subsection.3.3.3}{Galaxy-type objects}{section.3.3}% 19
-\BOOKMARK [1][-]{section.3.4}{Relevant Features}{chapter.3}% 20
-\BOOKMARK [0][-]{chapter.4}{Results}{}% 21
-\BOOKMARK [1][-]{section.4.1}{HPC results}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.2}{Model results}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.3}{Comparison - Metric evaluation BIC}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.4}{Selecci\363n de modelo}{chapter.4}% 25
-\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 26
+\BOOKMARK [1][-]{section.1.1}{Objectives}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{General Objective}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Specific Objective}{section.1.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Context}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.2.1}{DESI Project}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.2}{Machine Learning}{section.1.2}% 7
+\BOOKMARK [0][-]{chapter.2}{Methodology}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Data analysis and pre-processing}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{High performance computing analysis}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{Machine Learning}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.4.1}{Training}{section.2.4}% 13
+\BOOKMARK [2][-]{subsection.2.4.2}{Testing}{section.2.4}% 14
+\BOOKMARK [0][-]{chapter.3}{Data Analysis and Pre-processing}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Data descripcion}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{Simulated expected results - truth file}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.2}{Simulated Observations - target file}{section.3.1}% 18
+\BOOKMARK [1][-]{section.3.2}{Overview of the dataset}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.2.1}{Redshift relations}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.2}{Spectral types}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.3}{Galaxy-type objects}{section.3.2}% 22
+\BOOKMARK [1][-]{section.3.3}{Relevant Features}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.4}{Conclusions}{chapter.3}% 24
+\BOOKMARK [0][-]{chapter.4}{Results}{}% 25
+\BOOKMARK [1][-]{section.4.1}{Scalability of the training time of the ML models}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.2}{Model results}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.2.1}{Support Vector Regression \(SVR\) Model}{section.4.2}% 28
+\BOOKMARK [2][-]{subsection.4.2.2}{Kernel Ridge Regression \(KRR\) Model}{section.4.2}% 29
+\BOOKMARK [2][-]{subsection.4.2.3}{Model Ensemble}{section.4.2}% 30
+\BOOKMARK [1][-]{section.4.3}{Selecci\363n de modelo}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.4}{Conclusions}{chapter.4}% 32
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 33

@@ -1,9 +1,5 @@
-\chapter{Data}
+\chapter{Data Analysis and Pre-processing}
 \label{Ch:Data}
-
-\section{Introduction}
-
-
 \section{Data descripcion}
 
 The dataset used consist of two FITS files corresponding to the simulated observations of the DESI instrument and the "truth" data from cosmological simulations. Each data file has a key column called TARGETID, this variables is the same across all simulations and identifies a particular object in the sky, thus it is needed to relate both datasets. 
@@ -173,16 +169,19 @@ We see in Figure \ref{fig:BGS-FLUX-ALPHA} that each flux has a similar behaviour
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1.0\linewidth]{TeX_files/Imagenes/flux_cut_alpha}
-	\caption{Distribution of $\alpha$ at different cuts in the flux variable.}
+	\caption{Distribution of $\alpha$ at different cuts in the flux variable from figure \ref{fig:BGS-FLUX-ALPHA}}
 	\label{fig:flux_cut_alpha}
 \end{figure}
 
-The plots in Figure \ref{fig:flux_cut_alpha} are constructed by taking thin slices at fixed values of the fluxes in Figure \ref{fig:BGS-FLUX-ALPHA} and constructing the histogram of the points that lie within the slice. The first approximation is to fit the distribution to a Gaussian distribution and estimate its mean and variance. The relation between mean and fluxes is shown in Figure \ref{fig:media_alpha_flux}, were the green points indicate the mean of $\alpha$ for the slice taken at the given flux. 
-
-\begin{figure}[h!]
+The plots in Figure \ref{fig:flux_cut_alpha} are constructed by taking thin slices at fixed values of the fluxes in Figure \ref{fig:BGS-FLUX-ALPHA} and constructing the histogram of the points that lie within the slice. The first approximation is to fit the distribution to a Gaussian distribution and estimate its mean and variance. The relation between mean and fluxes is shown in Figure \ref{fig:media_alpha_flux}, were the green points indicate the mean of $\alpha$ for the slice taken at the given flux. The blue line in Figure \ref{fig:media_alpha_flux} indicates when $TRUEZ = TARZ$, therefore, we see in that for each flux, there are ranges within $\mu(\alpha)$ is not 1, even when the typical error is small. This ranges are around 1 (in log scale) for all the fluxes. Also, note that at very high fluxes, the error in the mean increases, related to the less data available at those values and its high dispersity. 
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=1.0\linewidth]{TeX_files/Imagenes/media_alpha_flux}
-	\caption{Mean and standard error $\alpha$ for every Flux interval (slice).}
+	\caption{Mean (red) and standard error (green) of $\log_{10}(\alpha)$ for every Flux interval (slice).}
 	\label{fig:media_alpha_flux}
 \end{figure}
+
+\section{Conclusions}
+The dataset used consist of two sets of simulated observation, the truth-file, with the simulated expected results of redshifts (TRUEZ) from the survey targets, and the target-file with the simulated observations by the instrument of the targets redshits (TARZ). The targest are clasifiedas Galaxies, QSOs and Stars, being Galaxies the most representative type with 84.25\% of the dataset. From this, the most interesting subtype of galaxies is the Bright Galaxy Survey (BGS) because of its patterns in redshift and the amount of data (49.51\% of the Galaxy type). The results in the following chapter are focused only in the BGS subtype, using as input features for the machine learning algorithms the fluxes and the target redshift, and the output the true redshift. 
+
 

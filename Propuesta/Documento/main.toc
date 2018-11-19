@@ -1,26 +1,35 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}DESI }{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Machine Learning}{1}{section.1.2}
+\contentsline {section}{\numberline {1.1}Objectives}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}General Objective}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Specific Objective}{1}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Context}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}DESI Project}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Machine Learning}{2}{subsection.1.2.2}
+\contentsline {subsubsection}{Kernel Methods}{2}{section*.2}
+\contentsline {subsubsection}{Neural Networks}{2}{section*.3}
 \contentsline {chapter}{\numberline {2}Methodology}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Introduction}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Model classes}{3}{section.2.2}
-\contentsline {section}{\numberline {2.3}Data sampling, train-validation-test}{3}{section.2.3}
-\contentsline {section}{\numberline {2.4}Data Preprocessing}{3}{section.2.4}
-\contentsline {section}{\numberline {2.5}Computational Resources analysis}{3}{section.2.5}
-\contentsline {section}{\numberline {2.6}Model training, evaluation and testing}{3}{section.2.6}
-\contentsline {chapter}{\numberline {3}Data}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{5}{section.3.1}
-\contentsline {section}{\numberline {3.2}Data descripcion}{5}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Simulated expected results - truth file}{5}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Simulated Observations - target file}{5}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Overview of the dataset}{7}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Redshift relations}{7}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Spectral types}{8}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Galaxy-type objects}{10}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Relevant Features}{10}{section.3.4}
-\contentsline {chapter}{\numberline {4}Results}{15}{chapter.4}
-\contentsline {section}{\numberline {4.1}HPC results}{15}{section.4.1}
-\contentsline {section}{\numberline {4.2}Model results}{15}{section.4.2}
-\contentsline {section}{\numberline {4.3}Comparison - Metric evaluation BIC}{15}{section.4.3}
-\contentsline {section}{\numberline {4.4}Selecci\IeC {\'o}n de modelo}{15}{section.4.4}
-\contentsline {chapter}{\numberline {5}Conclusions}{17}{chapter.5}
+\contentsline {section}{\numberline {2.2}Data analysis and pre-processing}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}High performance computing analysis}{4}{section.2.3}
+\contentsline {section}{\numberline {2.4}Machine Learning}{5}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Training}{5}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Testing}{6}{subsection.2.4.2}
+\contentsline {chapter}{\numberline {3}Data Analysis and Pre-processing}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Data descripcion}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Simulated expected results - truth file}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Simulated Observations - target file}{7}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Overview of the dataset}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Redshift relations}{9}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Spectral types}{10}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Galaxy-type objects}{12}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Relevant Features}{12}{section.3.3}
+\contentsline {section}{\numberline {3.4}Conclusions}{16}{section.3.4}
+\contentsline {chapter}{\numberline {4}Results}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Scalability of the training time of the ML models}{17}{section.4.1}
+\contentsline {section}{\numberline {4.2}Model results}{18}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Support Vector Regression (SVR) Model}{18}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Kernel Ridge Regression (KRR) Model}{21}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Model Ensemble}{24}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Selecci\IeC {\'o}n de modelo}{25}{section.4.3}
+\contentsline {section}{\numberline {4.4}Conclusions}{25}{section.4.4}
+\contentsline {chapter}{\numberline {5}Conclusions}{27}{chapter.5}
