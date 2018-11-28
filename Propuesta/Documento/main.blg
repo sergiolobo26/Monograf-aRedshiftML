@@ -1,52 +1,14 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/W32TeX)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+A level-1 auxiliary file: ./Tex_files/Abstract.aux
 A level-1 auxiliary file: ./TeX_files/chapterIntro.aux
-A level-1 auxiliary file: ./TeX_files/chapter00.aux
 A level-1 auxiliary file: ./TeX_files/chapter01.aux
+A level-1 auxiliary file: ./TeX_files/chapter00.aux
 A level-1 auxiliary file: ./TeX_files/chapter02.aux
-A level-1 auxiliary file: ./TeX_files/chapter04Herrera.aux
-A level-1 auxiliary file: ./TeX_files/chapter05Colapso.aux
-The style file: abbrv.bst
+A level-1 auxiliary file: ./TeX_files/chapter04.aux
+The style file: ieeetr.bst
 Database file #1: referencias.bib
-You've used 31 entries,
-            2118 wiz_defined-function locations,
-            680 strings with 7926 characters,
-and the built_in function-call counts, 8253 in all, are:
-= -- 785
-> -- 337
-< -- 3
-+ -- 139
-- -- 104
-* -- 503
-:= -- 1440
-add.period$ -- 93
-call.type$ -- 31
-change.case$ -- 131
-chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 354
-empty$ -- 709
-format.name$ -- 104
-if$ -- 1704
-int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 43
-newline$ -- 157
-num.names$ -- 62
-pop$ -- 171
-preamble$ -- 1
-purify$ -- 114
-quote$ -- 0
-skip$ -- 220
-stack$ -- 0
-substring$ -- 404
-swap$ -- 39
-text.length$ -- 3
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 98
-warning$ -- 0
-while$ -- 83
-width$ -- 33
-write$ -- 326
+Warning--entry type for "krr" isn't style-file defined
+--line 91 of file referencias.bib
+Warning--empty journal in Aghamousa:2016zmz
+Warning--empty journal in Aghamousa:2016sne
+(There were 3 warnings)

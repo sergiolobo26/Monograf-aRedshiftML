@@ -1,0 +1,9 @@
+\chapter*{\centering \begin{normalsize}Abstract\end{normalsize}}
+\begin{quotation}
+	\noindent The DESI (Dark Energy Spectroscopic Instrument) project will conduct a five-year survey designed to cover 14.000 $deg^2$ by studying baryon acoustic oscillations (BAO) and redshift-space distortions (RSD). DESI needs simulations for its design, development, and operation, in particular, it uses simulations to evaluate the data pipelines and measurements of redshifts from the spectrometers. In particular, DESI uses a simulated survey of mock galaxies and their redshifts are compared with the -also simulated- redshift measurements of DESI. These redshift measurements, however, present differences with respect to the true redshifts values of the mock galaxies. It is necessary to correct these measurements so that the instrument can work properly when tested in the real world. 
+	
+	The object of this monograph was, therefore, to apply machine learning (ML) methods to this simulation data to correct the redshift measurements using observational variables as input. 
+	
+	After preprocessing the data, the variables selected as input for the ML models  were the fluxes from the different observation bands, which are the $g, r, z, WISE 1,$ and $WISE 2$ bands, as well as the redshift output of the instrument's pipeline and the true redshift from the mock galaxies as output. We trained and tested support vector regression (SVR) and kernel ridge regression (KRR) models using cross-validation and grid search, and found that an ensemble model of different KRRs is the best model with a coefficient of determination, $r^2 = 0.98$. This could be used to improve the accuracy of DESI when working in the five-year survey. 
+\end{quotation}
+\clearpage

@@ -1,12 +1,12 @@
 \chapter{Results}
 
-\section{Scalability of the training time of the ML models} %High performance computing (HPC) results}
+\section{Scalability of the training time of the ML models} % High-performance computing (HPC) results}
 
-Since the BGS dataset contains about 800000 data points, the training of algorithms, model selection and validation can be too demanding, in processing and memory. Therefore, it is necessary to evaluate how the training time scales with the data when running in the High Performance Computing (HPC) cluster of the University, taking account several variables as the number of processor to run in parallel the algorithm and the resources requested to the cluster. In particular, we will focus on the following variables:
+Since the BGS dataset contains about 800000 data points, the training of algorithms, model selection, and validation can be too demanding, in processing and memory. Therefore, it is necessary to evaluate how the training time scales with the data when running in the High-Performance Computing (HPC) cluster of the University, taking account several variables as the number of processors to run in parallel the algorithm and the resources requested to the cluster. In particular, we will focus on the following variables:
 \begin{align*}
 m &= \text{Requested memory to solve the job [Gb]},\\
 n_{jobs} &= \text{Number of jobs to run in parallel},\\
-ppn &= \text{Requested proccesors per node},\\
+ppn &= \text{Requested processors per node},\\
 n &= \text{size of the dataset used},\\
 M &= \frac{n_{jobs} \times n}{ppn \times m}.
 \end{align*}
@@ -17,20 +17,20 @@ M &= \frac{n_{jobs} \times n}{ppn \times m}.
 	\label{fig:hpcresults}
 \end{figure}
 
-The variable $M$ measures the relation between the requested resources and the used. Figure \ref{fig:hpcresults} shows how time increases as a function of variable M. Note that $M^{-1}$ can be seen as a 'unitary memory', that is, the memory used per data per processor,
+The variable $M$ measures the relationship between the requested resources and the resources used. Figure \ref{fig:hpcresults} shows how time increases as a function of variable M. Note that $M^{-1}$ can be seen as a 'unitary memory', that is, the memory used per data per processor,
 \begin{equation*}
 M^{-1} = \frac{m}{p_u \times n},
 \end{equation*}
-where $p_u = n_{jobs}/ppn$ is the fraction of the requested processors that is actually being used by the parallel code. Therefore, when $M$ is big, it means that there is too much data per memory per processor, and the time to train the model is to high. It is worth mentioning that the time were measure for the kernel ridge regression model particularly, using grid search and 3-fold cross validation. Others model may be faster or slower to train, but the behavior should be the same. The time of training for a given $M$ can be aproximated by the relation
+where $p_u = n_{jobs}/ppn$ is the fraction of the requested processors that is actually being used by the parallel code. Therefore, when $M$ is big, it means that there is too much data per memory per processor, and the time to train the model is too high. It is worth mentioning that the time was measured for the kernel ridge regression model particularly, using grid search and 3-fold cross-validation. Others model may be faster or slower to train, but the behavior should be the same. The time of training for a given $M$ can be approximated by the relation
 \begin{equation}
-	t = 7M^{1.11} [s].
+t = 7M^{1.11} [s].
 \end{equation}
 
-This results have to be constrained to the waiting time in queue of the cluster, in general, the smaller M, the best time, but that means, using small dataset or increasing the resources, but for the second option, the more resources you request, the longer the queue and waiting time to execute the code. It was fond that a configuration with \textbf{$n_{jobs} = 16$, $ppn = 32$, $m = 128 Gb$ and $n = 100000$}, gives good results. n is critical since it determines how well the model will learn, 100000 data points works very well as it will be shown in the next sections.  
+This results have to be constrained to the waiting time in queue of the cluster, in general, the smaller M, the best time, but that means, using small dataset or increasing the resources, but for the second option, the more resources you request, the longer the queue and waiting time to execute the code. It was found that a configuration with \textbf{$n_{jobs} = 16$, $ppn = 32$, $m = 128 Gb$ and $n = 100000$}, gives good results. n is critical since it determines how well the model will learn, 100000 data points work very well as it will be shown in the next sections.  
 
 \section{Model results}
 
-The three model tested consist of a KRR, a SVR and an ensemble model. The original BGS dataset was divided into a 75 - 25 train-test set, from the 75 \%, each model was trained on a subset of size 100.000, as mentioned in the previous section. To account for the bias, the same model was trained in tree 100.000 dataset and the results were averaged. The selection of the model hyperparameters was made by using grid search a 3-fold cross validation, using a 80-20 development-evaluation scheme. 
+The three model tested consist of a KRR, an SVR, and an ensemble model. The original BGS dataset was divided into a 75 - 25 train-test set, from the 75 \%, each model was trained on a subset of size 100.000, as mentioned in the previous section. To account for the bias, we trained the same model in tree 100.000 dataset and the results were averaged. The selection of the model hyperparameters was made by using grid search a 3-fold cross-validation, using an 80-20 development-evaluation scheme. 
 
 \subsection{Support Vector Regression (SVR) Model}
 
@@ -84,7 +84,7 @@ r2 score computed on the full evaluation set:
 --------------------------------------------------------------------------
 Model 3:
 
-Best parameters set found on development set:
+Best parameters set found on the development set:
 
 {'gamma': 0.1, 'C': 1, 'kernel': 'rbf'}
 
@@ -108,10 +108,10 @@ r2 score computed on the full evaluation set:
 \begin{figure}[th!]
 	\centering
 	\includegraphics[width=1.0\linewidth]{TeX_files/Imagenes/svr-train}
-	\caption{Results onthe training set after training the SVR model.}
+	\caption{Results on the training set after training the SVR model.}
 	\label{fig:svr-train}
 \end{figure}
-The results on training set of the best models is shown in Figure \ref{fig:svr-train}. On training, the model shows good results by gathering the blue dots (original data)over the orange dots (the model results after applying it to the training data). The blue scatter is substantially diminished and the data is clustered along de TRUEZ = TARZ line, However, the data is not entirely over the line, but in a wide range. The result on the evaluation set for each model is show in Figure \ref{fig:svr-test}. 
+The results on the training set of the best models are shown in Figure \ref{fig:svr-train}. On training, the model shows good results by gathering the blue dots (original data)over the orange dots (the model results after applying it to the training data). The blue scatter is substantially diminished and the data is clustered along de TRUEZ = TARZ line, However, the data is not entirely over the line, but in a wide range. Figure \ref{fig:svr-test} shows the result on the evaluation set for each model. 
 \begin{figure}[th!]
 	\centering
 	\includegraphics[width=1.0\linewidth]{TeX_files/Imagenes/svr-test}
@@ -142,7 +142,7 @@ r2 score computed on the full evaluation set:
 0.990
 --------------------------------------------------------------------------
 Model 2:
-Best parameters set found on development set:
+Best parameters set found on the development set:
 
 {'alpha': 0.001, 'gamma': 0.2, 'kernel': 'rbf'}
 
@@ -158,7 +158,7 @@ r2 score computed on the full evaluation set:
 0.988
 --------------------------------------------------------------------------
 Model 3:
-Best parameters set found on development set:
+Best parameters set found on the development set:
 
 {'alpha': 0.001, 'gamma': 0.2, 'kernel': 'rbf'}
 
@@ -177,10 +177,10 @@ r2 score computed on the full evaluation set:
 \begin{figure}[th!]
 	\centering
 	\includegraphics[width=1.0\linewidth]{TeX_files/Imagenes/krr-train}
-	\caption{Results onthe training set after training the KRR model.}
+	\caption{Results on the training set after training the KRR model.}
 	\label{fig:krr-train}
 \end{figure}
-The results on training set of the best models is shown in Figure \ref{fig:krr-train}. On training, the model shows better results than SVR by gathering the blue dots (original data)over the orange dots (the model results after applying it to the training data) on a tighter region. The blue scatter is substantially diminished and the data is clustered along de TRUEZ = TARZ line. The result on the evaluation set for each model is show in Figure \ref{fig:krr-test}. 
+The results on the training set of the best models are shown in Figure \ref{fig:krr-train}. On training, the model shows better results than SVR by gathering the blue dots (original data)over the orange dots (the model results after applying it to the training data) on a tighter region. The blue scatter is substantially diminished and the data is clustered along de TRUEZ = TARZ line. Figure \ref{fig:krr-test} shows the result on the evaluation set for each model. 
 \begin{figure}[th!]
 	\centering
 	\includegraphics[width=1.0\linewidth]{TeX_files/Imagenes/krr-test}
@@ -220,15 +220,15 @@ Figure \ref{fig:ensemblemodel} shows this in a diagram, it is important to note 
 		Model w & 0.983 \\ 
 		\hline 
 	\end{tabular} 
-    \caption{Results on the \textbf{test} set}
-    \label{table:test-result}
+	\caption{Results on the \textbf{test} set}
+	\label{table:test-result}
 \end{table}
 
-Table \ref{table:test-result} shows that the weighted average of the three models is the best model in terms of accuracy, taking into account that this are the predictions of the models on the totally-unseen test data corresponding to the 25\% of the original BGS dataset. 
+Table \ref{table:test-result} shows that the weighted average of the three models is the best model in terms of accuracy, taking into account that these are the predictions of the models on the totally-unseen test data corresponding to the 25\% of the original BGS dataset. 
 \section{Selección de modelo}
 
-The class of models evaluated is that of kernels models, the complexity of both, the SVR and the KRR is very similar, however the KRR gave better results. This could be atributed to the lack of tuning of the $\epsilon$ parameter in SVR, due to the time of computation of SVR training. Smaller values of $\epsilon$, may result in a tighter region over the TRUEZ = TARZ line, therefore increasing the $r^2$. The weighted average model has at least 3 times more parameters that any model individually, its results are much better. Therefore, the best model, that keeps simplicity and very good results is the weighted average model. 
+The class of models evaluated is that of kernels models, the complexity of both, the SVR and the KRR is very similar, however, the KRR gave better results. This could be attributed to the lack of tuning of the $\epsilon$ parameter in SVR, due to the time of computation of SVR training. Smaller values of $\epsilon$ may result in a tighter region over the TRUEZ = TARZ line, therefore increasing the $r^2$. The weighted average model has at least 3 times more parameters that any model individually, its results are much better. Therefore, the best model that keeps simplicity and very good results is the weighted average model. 
 
 \section{Conclusions}
 
-We evaluated two types of kernels method, the support vector regression (SVR) and the kernell ridge regression (KRR). The dataset was split in a training part (75\%) and a test part (25\%). Each model was trained tree times on subset of the training part of size 100.000, this subset were also subdivide in a 80-20 development - evaluation datasets for the application of grid search and cross validation. The KRR gave better results than the SVR, also, the three KRR models were ensemble as a weighted average, where the weights were found using a linear regressor. The ensemble average KRR model reached a $r^2$ of 0.98 on the test set. 
+We evaluated two types of kernels method, the support vector regression (SVR) and the kernel ridge regression (KRR). The dataset was split in a training part (75\%) and a test part (25\%). Each model was trained three times on subset of the training part of size 100.000, this subset was also subdivided in an 80-20 development - evaluation datasets for the application of grid search and cross-validation. The KRR gave better results than the SVR, also, the three KRR models were ensemble as a weighted average, where the weights were found using a linear regressor. The ensemble average KRR model reached an $r^2$ of 0.98 on the test set. 

@@ -9,12 +9,14 @@
 \usepackage{mathrsfs}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{ amssymb }
 \usepackage{mathcomp}
 \usepackage{gensymb}
 \usepackage{tensor}
 \usepackage{tcolorbox}
 \usepackage{lmodern}
 \usepackage{wasysym}
+\usepackage{enumerate}
 \setlength{\parindent}{2.0em}
 \setlength{\parskip}{0.6em}
 \renewcommand{\baselinestretch}{1.25}
@@ -25,9 +27,9 @@
 \geometry{
 	a4paper,
 	total={170mm,257mm},
-	left=30mm,
-	right=30mm,
-	top=20mm,
+	left=35mm,
+	right=35mm,
+	top=25mm,
 }
 
 \begin{document}
@@ -39,8 +41,10 @@
 \frontmatter
 \input{TeX_files/HojadePresentacion}
 \tableofcontents
-
+\listoffigures
+\listoftables
 \mainmatter
+\include{./Tex_files/Abstract}
 \include{./TeX_files/chapterIntro}
 \include{./TeX_files/chapter01}
 \include{./TeX_files/chapter00}
@@ -57,7 +61,7 @@
 
 \backmatter
 % bibliography, glossary and index would go here.
-\bibliographystyle{abbrv}
-%\bibliography{referencias}
+\bibliographystyle{ieeetr}
+\bibliography{referencias}
 
 \end{document}
