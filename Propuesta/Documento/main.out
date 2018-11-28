@@ -1,36 +1,38 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Objectives}{chapter.1}% 2
 \BOOKMARK [2][-]{subsection.1.1.1}{General Objective}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Specific Objective}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.2}{Specific Objectives}{section.1.1}% 4
 \BOOKMARK [1][-]{section.1.2}{DESI Project}{chapter.1}% 5
 \BOOKMARK [2][-]{subsection.1.2.1}{Targets}{section.1.2}% 6
 \BOOKMARK [2][-]{subsection.1.2.2}{Simulations}{section.1.2}% 7
 \BOOKMARK [1][-]{section.1.3}{Machine Learning}{chapter.1}% 8
 \BOOKMARK [2][-]{subsection.1.3.1}{Kernel Methods}{section.1.3}% 9
-\BOOKMARK [0][-]{chapter.2}{Methodology}{}% 10
-\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.2}{Data analysis and pre-processing}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.3}{ High-performance computing analysis}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.4}{Machine Learning}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.4.1}{Training}{section.2.4}% 15
-\BOOKMARK [2][-]{subsection.2.4.2}{Testing}{section.2.4}% 16
-\BOOKMARK [2][-]{subsection.2.4.3}{Model Performance}{section.2.4}% 17
-\BOOKMARK [0][-]{chapter.3}{Data Analysis and Pre-processing}{}% 18
-\BOOKMARK [1][-]{section.3.1}{Data descripcion}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.1.1}{Simulated expected results - truth file}{section.3.1}% 20
-\BOOKMARK [2][-]{subsection.3.1.2}{Simulated Observations - target file}{section.3.1}% 21
-\BOOKMARK [1][-]{section.3.2}{Overview of the dataset}{chapter.3}% 22
-\BOOKMARK [2][-]{subsection.3.2.1}{Redshift relations}{section.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.2.2}{Spectral types}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.3}{Galaxy-type objects}{section.3.2}% 25
-\BOOKMARK [1][-]{section.3.3}{Relevant Features}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.4}{Conclusions}{chapter.3}% 27
-\BOOKMARK [0][-]{chapter.4}{Results}{}% 28
-\BOOKMARK [1][-]{section.4.1}{Scalability of the training time of the ML models}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.2}{Model results}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.2.1}{Support Vector Regression \(SVR\) Model}{section.4.2}% 31
-\BOOKMARK [2][-]{subsection.4.2.2}{Kernel Ridge Regression \(KRR\) Model}{section.4.2}% 32
-\BOOKMARK [2][-]{subsection.4.2.3}{Model Ensemble}{section.4.2}% 33
-\BOOKMARK [1][-]{section.4.3}{Selecci\363n de modelo}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.4}{Conclusions}{chapter.4}% 35
-\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 36
+\BOOKMARK [2][-]{subsection.1.3.2}{Support Vector Machines used for Regression}{section.1.3}% 10
+\BOOKMARK [2][-]{subsection.1.3.3}{Kernel Ridge Regression}{section.1.3}% 11
+\BOOKMARK [0][-]{chapter.2}{Methodology}{}% 12
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{Data analysis and pre-processing}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{ High-performance computing analysis}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.4}{Machine Learning}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.4.1}{Training}{section.2.4}% 17
+\BOOKMARK [2][-]{subsection.2.4.2}{Testing}{section.2.4}% 18
+\BOOKMARK [2][-]{subsection.2.4.3}{Model Performance}{section.2.4}% 19
+\BOOKMARK [0][-]{chapter.3}{Data Analysis and Pre-processing}{}% 20
+\BOOKMARK [1][-]{section.3.1}{Data descripcion}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.1.1}{Simulated expected results - truth file}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.2}{Simulated Observations - target file}{section.3.1}% 23
+\BOOKMARK [1][-]{section.3.2}{Overview of the dataset}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.2.1}{Redshift relations}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.2}{Spectral types}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.3}{Galaxy-type objects}{section.3.2}% 27
+\BOOKMARK [1][-]{section.3.3}{Relevant Features}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.4}{Conclusions}{chapter.3}% 29
+\BOOKMARK [0][-]{chapter.4}{Results}{}% 30
+\BOOKMARK [1][-]{section.4.1}{Scalability of the training time of the ML models}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.2}{Model results}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.2.1}{Support Vector Regression \(SVR\) Model}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.2}{Kernel Ridge Regression \(KRR\) Model}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.3}{Model Ensemble}{section.4.2}% 35
+\BOOKMARK [1][-]{section.4.3}{Model Selection}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.4}{Conclusions}{chapter.4}% 37
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 38

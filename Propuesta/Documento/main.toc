@@ -1,7 +1,7 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Objectives}{3}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}General Objective}{3}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}Specific Objective}{3}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.2}Specific Objectives}{3}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}DESI Project}{4}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Targets}{4}{subsection.1.2.1}
 \contentsline {subsubsection}{Bright Galaxy Sample}{4}{section*.6}
@@ -13,8 +13,8 @@
 \contentsline {subsubsection}{Instrument Simulations}{7}{section*.11}
 \contentsline {section}{\numberline {1.3}Machine Learning}{8}{section.1.3}
 \contentsline {subsection}{\numberline {1.3.1}Kernel Methods}{10}{subsection.1.3.1}
-\contentsline {subsubsection}{Support Vector Machines and Support Vector Regression}{11}{section*.17}
-\contentsline {subsubsection}{Kernel Ridge Regression}{12}{section*.19}
+\contentsline {subsection}{\numberline {1.3.2}Support Vector Machines used for Regression}{11}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Kernel Ridge Regression}{12}{subsection.1.3.3}
 \contentsline {chapter}{\numberline {2}Methodology}{15}{chapter.2}
 \contentsline {section}{\numberline {2.1}Introduction}{15}{section.2.1}
 \contentsline {section}{\numberline {2.2}Data analysis and pre-processing}{16}{section.2.2}
@@ -39,6 +39,6 @@
 \contentsline {subsection}{\numberline {4.2.1}Support Vector Regression (SVR) Model}{32}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Kernel Ridge Regression (KRR) Model}{35}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Model Ensemble}{38}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Selecci\IeC {\'o}n de modelo}{39}{section.4.3}
+\contentsline {section}{\numberline {4.3}Model Selection}{39}{section.4.3}
 \contentsline {section}{\numberline {4.4}Conclusions}{39}{section.4.4}
 \contentsline {chapter}{\numberline {5}Conclusions}{41}{chapter.5}

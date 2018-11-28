@@ -21,7 +21,7 @@ The variable $M$ measures the relationship between the requested resources and t
 \begin{equation*}
 M^{-1} = \frac{m}{p_u \times n},
 \end{equation*}
-where $p_u = n_{jobs}/ppn$ is the fraction of the requested processors that is actually being used by the parallel code. Therefore, when $M$ is big, it means that there is too much data per memory per processor, and the time to train the model is too high. It is worth mentioning that the time was measured for the kernel ridge regression model particularly, using grid search and 3-fold cross-validation. Others model may be faster or slower to train, but the behavior should be the same. The time of training for a given $M$ can be approximated by the relation
+where $p_u = n_{jobs}/ppn$ is the fraction of the requested processors that is actually being used by the parallel code. Therefore, when $M$ is big, it means that there is too much data per memory per processor, and the time to train the model is too high. It is worth mentioning that the time was measured for the kernel ridge regression model particularly, using grid search and 3-fold cross-validation. Others model may be faster or slower to train, but the behavior should be the same. From Figure \ref{fig:hpcresults} we see that the time of training for a given $M$ can be approximated by the relation
 \begin{equation}
 t = 7M^{1.11} [s].
 \end{equation}
@@ -30,7 +30,7 @@ This results have to be constrained to the waiting time in queue of the cluster,
 
 \section{Model results}
 
-The three model tested consist of a KRR, an SVR, and an ensemble model. The original BGS dataset was divided into a 75 - 25 train-test set, from the 75 \%, each model was trained on a subset of size 100.000, as mentioned in the previous section. To account for the bias, we trained the same model in tree 100.000 dataset and the results were averaged. The selection of the model hyperparameters was made by using grid search a 3-fold cross-validation, using an 80-20 development-evaluation scheme. 
+We train and test three models, namely a KRR, an SVR, and an ensemble model. We divided the original BGS dataset into a 75 - 25 train-test set, from the 75 \%, each model was trained on a subset of size 100.000, as mentioned in the previous section. To account for the bias, we trained the same model in tree 100.000 subsets and the results were averaged. The selection of the model hyperparameters was made by using grid search a 3-fold cross-validation, using an 80-20 development-evaluation scheme. 
 
 \subsection{Support Vector Regression (SVR) Model}
 
@@ -191,7 +191,7 @@ Figure \ref{fig:krr-test} shows how the model generalize to unseen data. The gat
 
 \subsection{Model Ensemble}
 
-The results from the KRR are much better than those of the SVR, also noting that the KRR model takes about half the time to train. Given that we have three different models to predict on the same dataset, we have to make this model to predict a single output. For this, we tried taking the maximum, the average or a weighted average of the model. 
+The results from the KRR are much better than those of the SVR, also note that the KRR model takes about half the time to train. Given that we have three different models to predict on the same dataset, we have to make this model to predict a single output. For this, we try taking the maximum, the average or a weighted average of the model. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1\linewidth]{TeX_files/Imagenes/ensemble_model}
@@ -199,7 +199,7 @@ The results from the KRR are much better than those of the SVR, also noting that
 	\label{fig:ensemblemodel}
 \end{figure}
 
-Figure \ref{fig:ensemblemodel} shows this in a diagram, it is important to note that the ensemble is made over the \textbf{trained} models, that means that the parameters of the models are not re-learned in the ensemble. The only ensemble model that involves training, is the weighted average, where the weights are select by training a linear model. The results of the models on the \textbf{test} subset (unseen 25\%) are shown in Table \ref{table:test-result}. 
+Figure \ref{fig:ensemblemodel} shows this in a diagram, it is important to note that the ensemble is made over the \textbf{trained} models, that means that the parameters of the models are not re-learned in the ensemble. The only ensemble model that involves training, is the weighted average, where the weights are selected by training a linear model. The results of the models on the \textbf{test} subset (unseen 25\%) are shown in Table \ref{table:test-result}. 
 
 \begin{table}[h!]
 	\centering
@@ -225,10 +225,10 @@ Figure \ref{fig:ensemblemodel} shows this in a diagram, it is important to note 
 \end{table}
 
 Table \ref{table:test-result} shows that the weighted average of the three models is the best model in terms of accuracy, taking into account that these are the predictions of the models on the totally-unseen test data corresponding to the 25\% of the original BGS dataset. 
-\section{Selección de modelo}
+\section{Model Selection}
 
 The class of models evaluated is that of kernels models, the complexity of both, the SVR and the KRR is very similar, however, the KRR gave better results. This could be attributed to the lack of tuning of the $\epsilon$ parameter in SVR, due to the time of computation of SVR training. Smaller values of $\epsilon$ may result in a tighter region over the TRUEZ = TARZ line, therefore increasing the $r^2$. The weighted average model has at least 3 times more parameters that any model individually, its results are much better. Therefore, the best model that keeps simplicity and very good results is the weighted average model. 
 
 \section{Conclusions}
 
-We evaluated two types of kernels method, the support vector regression (SVR) and the kernel ridge regression (KRR). The dataset was split in a training part (75\%) and a test part (25\%). Each model was trained three times on subset of the training part of size 100.000, this subset was also subdivided in an 80-20 development - evaluation datasets for the application of grid search and cross-validation. The KRR gave better results than the SVR, also, the three KRR models were ensemble as a weighted average, where the weights were found using a linear regressor. The ensemble average KRR model reached an $r^2$ of 0.98 on the test set. 
+We evaluated two types of kernels method, the support vector regression (SVR) and the kernel ridge regression (KRR). The dataset was split in a training part (75\%) and a test part (25\%). We trained each model three times on subsets of the training part of size 100.000, this subset was also subdivided in an 80-20 development - evaluation datasets for the application of grid search and cross-validation. The KRR gave better results than the SVR, also, the three KRR models were ensemble as a weighted average, where the weights were found using a linear regressor. The ensemble average KRR model reached an $r^2$ of 0.98 on the test set. 
