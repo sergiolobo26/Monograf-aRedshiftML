@@ -1,0 +1,216 @@
+\chapter{Gravitational Collapse of non-perfect fluids}
+As we have said before, the gravitational collapse of massive starts is one of the few observable scenarios where general relativity plays an important role, in contrast with many other astrophysical problems in which the Newtonian approximation is enough. It is therefore necessary to give a detailed description of this process adding more components to the original recipe of Oppenheimer and Snyder \cite{oppenheimer1939continued}. However it is valid to ask why should it be necessary to add more complication to the already complicated problem of gravitational collapse, such as the introduction of viscous, dissipative and radiating terms? The simple answer is that the gravitational collapse of stars \textit{is} a dissipative process and is can be proved as easily as follow: Let us make some rough estimates of the energy that consumes the gravitational collapse of a massive start to a 10 Km solar-mass-neutron star \textit{adiabatically} \cite{herrera2009relativistic}: The gravitational binding energy of a one solar mass of 10 Km is roughly given by
+$$
+E\approx -\frac{G M^2}{R} = -10^{53} erg
+$$ 
+
+Therefore, the collapse must release this amount of energy in order for the neutron star to form. Since we assume that the process occur adiabatically, then the internal energy, $E_{in}$ of the star must increase by that amount.  Now, assuming $E_{in} \approx kT$, where $k$ is the Boltzmann constant, then the temperature of such a system should rise the \textit{absurd} value of
+\begin{equation}
+\label{eq:TemperatureRiseAdiabCollapse}
+	T\approx 10^{69} K,
+\end{equation}
+implying that after all is should radiate with luminosity of $10^{283} erg/s$. This would evaporate the star in less than a time of the order of $10^{-230}s$. Since all of these absurd values come from the original assumption that the whole process proceeds adiabatically, there must be some mechanism that allows the star to get rid of all the extra energy it has before collapsing\cite{herrera2009relativistic}.
+\section{Equations for the interior space-time}
+We assume a spherically symmetric distribution of fluid undergoing dissipation in the form of heat flow, free streaming radiation and shearing and bulk viscosity. The collapsing fluid is bounded by a surface $\Sigma$ and the viscosity dissipation terms are assumed to obey causal relations. In general comoving coordinates, the interior space-time is
+\begin{equation}
+	\label{eq:MetricInterior}
+	ds^{2}_{-} = -A^2 (t, r)dt^2 + B^2 (t,r) dr^2 + (rC(t,r))^2d\Omega^2.
+\end{equation}
+Now we assume that the energy-momentum tensor of the collapsing matter is \cite{herrera2009dynamics}
+\begin{equation}
+	\label{eq:EnergyMomeTensorHerrera}
+	T_{\alpha\beta} = (\rho + p + \Pi)U_{\alpha}U_{\beta} + (p + \Pi)g_{\alpha\beta} + q_{\alpha} U_{\beta} + q_{\beta} U_{\alpha} + \epsilon l_{\alpha}l_{\beta} + \pi_{\alpha\beta} .
+\end{equation}
+Note that this is the same energy-momentum tensor in \ref{eq:EnergyTensorNPF} with an additional term, the same from the source of the Vaidya metric \ref{eq:EMradiation}, where $\epsilon$ is the radiation density, and all the other variables are those defined in the previous chapters. These quantities satisfy
+\begin{align}\nonumber
+	U_{\alpha}U^{\alpha} &= -1, \qquad U^{\alpha}q_{\alpha} = 0 \qquad U^{\alpha}l_{\alpha} = -1 , \qquad l^{\alpha}l_{\alpha} = 0 \\\nonumber
+	\pi_{\mu\nu}U^{\nu} &= 0, \qquad \pi_{[\mu\nu]} = 0, \qquad \tensor{\pi}{^{\alpha}_{\alpha}} = 0 \,\,\,\,\text{from this follow}\\\label{eq:Pidef}
+	\pi_{0\alpha} &= 0 \qquad \tensor{\pi}{^{1}_1} = -2\tensor{\pi}{^{2}_2} = -2\tensor{\pi}{^{3}_3}.
+\end{align}
+
+Since we want a causal picture of dissipative variables, we cannot use the constitutive equation of standard irreversible thermodynamics \ref{eq:ConstitutiveEqEckart1}-\ref{eq:ConstitutiveEqEckart3}. This approach is discussed by many authors, including \cite{herrera2004dynamics} and \cite{pinheiro2008radiating}. The extended irreversible thermodynamic constitutive equations involve the kinematic tensors defined in \ref{eq:DefinitionKinematicTensors}, so the first part will be to write down this tensors in terms of the elements of the metric. First note that since the metric is comoving and the heat flow is radial:
+\begin{equation}
+	U^{\alpha} = A^{-1}\delta^{\alpha}_{0},\qquad q^{\alpha} = q(t,r) B^{-1}\delta^{\alpha}_1 ,\qquad l^{\alpha} = A^{-1}\delta^{\alpha}_{0} + B^{-1}\delta^{\alpha}_1, 
+\end{equation}
+also, from \ref{eq:Pidef} we can write
+\begin{equation}
+	\label{eq:Pidef2}
+	\pi_{\alpha\beta} = \Omega(\chi_{\alpha}\chi_{\beta} - \frac{1}{3}h_{\alpha\beta}) ,
+\end{equation}
+where $\chi^{\alpha}$ is a unit four vector along the radial direction and $\Omega = 3/2\pi^{1}_{1}$. Next we compute the non vanishing components of the shear tensor defined in \ref{eq:DefinitionKinematicTensors},
+\begin{equation}
+	\sigma_{11} = \frac{2}{3}B^2 \sigma ,\qquad \sigma_{22} = \frac{\sigma_{33}}{\sin ^2 \theta} = -\frac{1}{3} (Cr)^2 \sigma ,
+\end{equation}
+where
+\begin{equation}
+	\sigma = \frac{1}{A}\left(\frac{\dot{B}}{B} - \frac{\dot{C}}{C}\right) = \left( \frac{3}{2} \sigma_{\alpha\beta}\sigma^{\alpha\beta} \right)^{1/2}.
+\end{equation}
+The 4-acceleration and the expansion, given as well by \ref{eq:DefinitionKinematicTensors} are:
+\begin{equation}
+	a_1 = \frac{A'}{A} \qquad \Theta = \frac{1}{A} \left( \frac{\dot{B}}{B} + 2 \frac{\dot{C}}{C} \right),
+\end{equation}
+the dot stands for differentiation with respect to $t$, and the prime stands for $r$ differentiation. Now we proceed to the Einstein field equations given by
+\begin{equation}
+	G_{\alpha\beta}^{-} = 8\pi T^{-}_{\alpha\beta} .
+\end{equation}
+From section \ref{sec:ComovingCoordinates} we know that the non vanishing components of the Einstein tensor are
+\begin{equation}
+	G_{00}^{-}, \qquad G_{11}^{-} ,\qquad G_{22}^{-} ,\qquad G_{33}^{-} = \sin ^2 \theta G_{22}^{-}, \qquad G_{01}^{-} .
+\end{equation}
+According to \ref{eq:EinsteinTensorComovingCH}. The corresponding components of the energy-momentum tensor are:
+\begin{align}
+	8\pi T_{00}^{-} &= 8\pi (\rho + \epsilon)A^2, \\
+	8\pi T_{11}^{-} &= 8\pi \left[p + \Pi + \epsilon + \frac{2}{3}\Omega \right],\\
+	8\pi T_{22}^{-} &= 8\pi \left[p + \Pi - \frac{\Omega}{3}\right](Cr)^2 ,\\
+	8\pi T_{01}^{-} &= -8\pi(q + \epsilon) AB.
+\end{align}
+
+\section{Exterior spacetime}
+The metric outside the collapsing star correspond to the metric of a spherically radiating source, this means, a Vaidya metric as shown in section \ref{sec:VaidyaMetric}. The line element is
+\begin{equation}
+	\label{eq:VaidyaMetricB}
+	ds^{2}_{+} = - \left(1 - \frac{2m(\nu)}{\textbf{r}}\right)d\nu^2 - 2 d\textbf{r}d\nu + \textbf{r}^2d\Omega^2.
+\end{equation}
+We have to apply the two junction conditions \ref{eq:FirstJunctCon} and \ref{eq:SecondJunctCond},
+\begin{align}
+	(ds^{2}_{-})_{\Sigma} &= (ds^{2}_{+})_{\Sigma}, \\
+	K_{ab}^{-} &= K_{ab}^{+}.
+\end{align}
+We choose on $\Sigma$ the standard intrinsic coordinates $\tau, \theta, \phi$ and proceed to compute the induced metric, and obtain
+\begin{align}
+\label{eq:FirstJcond}
+	A(t, r_{\Sigma})\frac{dt}{d\tau} &= 1,\\\nonumber
+	C(r_{\Sigma}, t) r_{\Sigma} &= \textbf{r}_{\Sigma}(\nu) ,\\\nonumber
+	\left(\frac{d\nu}{d\tau}\right)^{-2}_{\Sigma} &= \left(1 - \frac{2m(\nu)}{\textbf{r}} + 2\frac{d\textbf{r}}{d\nu}\right)_{\Sigma}.
+\end{align}
+Now we proceed with the computation of the second fundamental form: In the interior coordinates, $\Sigma$ is defined by $\Phi = r - r_{\Sigma} = 0$, the corresponding normal vector is calculated as $\partial_{\alpha}\Phi$ and normalized:
+\begin{equation}
+\label{eq:NormalToSigmaIN}
+	n_{\alpha}^{-} = \{0, B(r_{\Sigma},t), 0,0\}
+\end{equation} 
+Now, the non-vanishing components of the extrinsic curvature given by \ref{eq:ExtrinsicCurv} are
+\begin{align}
+	\label{eq:ExtrinsicCurvInt1}
+	K_{\tau\tau}^{-} &= - \left[\left(\frac{dt}{d\tau}\right)^2\frac{AA'}{B}\right]_{\Sigma}, \\	\label{eq:ExtrinsicCurvInt2}
+	K_{\theta\theta}^{-} &= \left(\frac{(rC' +C)rC}{B}\right)_{\Sigma},\\
+	K_{\phi\phi}^{-} &=  K_{\theta\theta}^{-}\sin^2 \theta.
+\end{align}
+In the exterior, the equation of $\Sigma$ is given by $\textbf{r} - \textbf{r}_{\Sigma}(\nu)=0$ therefore, $\partial_\alpha \Phi = \{ -d\textbf{r}_{\Sigma} / d\nu, 1, 0, 0\}$ and
+\begin{equation}
+	n_{\alpha}^{+} = \left(1 - \frac{2m}{\textbf{r}} + 2 \frac{d\textbf{r}}{d\nu}\right)_{\Sigma}^{1/2} \left\{ -d\textbf{r} / d\nu, 1, 0, 0\right\}_{\Sigma}.
+\end{equation}
+The non vanishing components of the extrinsic curvature are
+\begin{align}
+	\label{eq:ExtrinsicCurvExt1}
+		K_{\tau\tau}^{+} &= \left[\frac{d^2\nu}{d\tau^2} \left(\frac{d\nu}{d\tau}\right)^{-1} - \left(\frac{d\nu}{d\tau}\right)\frac{m}{\textbf{r}} \right]_{\Sigma}, \\\label{eq:ExtrinsicCurvExt2}
+			K_{\theta\theta}^{+} &= \left[\left(\frac{d\nu}{d\tau}\right)\left(1 - \frac{2m}{\textbf{r}}\right)\textbf{r} + \frac{d\textbf{r}}{d\tau}\textbf{r}\right]_{\Sigma},\\\label{eq:ExtrinsicCurvExt3}
+		K_{\phi\phi}^{+} &=  K_{\theta\theta}^{+}\sin^2 \theta	.		
+\end{align}
+
+From \ref{eq:ExtrinsicCurvExt2} and \ref{eq:ExtrinsicCurvInt2} we get
+\begin{equation}
+ \left[\left(\frac{d\nu}{d\tau}\right)\left(1 - \frac{2m}{\textbf{r}}\right)\textbf{r} + \frac{d\textbf{r}}{d\tau}\textbf{r}\right]_{\Sigma} =  \left(\frac{(rC' +C)rC}{B}\right)_{\Sigma}.
+\end{equation}
+With the help of \ref{eq:FirstJcond} we can rewrite this as our first result:
+\begin{equation}
+\label{eq:VaidyaMass}
+	m = \frac{Cr}{2}\left\{ \left(\frac{r\dot{C}}{A}\right)^2 - \left[\frac{(Cr)^2}{B}\right]^2 + 1\right\}.
+\end{equation} 
+This is quite interesting since the rhs correspond to the same mass defined by Misner and Sharp in \cite{misner1964relativistic}. From the equality of the remaining independent component of the extrinsic curvature, and again \ref{eq:FirstJcond}, we get \cite{pinheiro2008radiating}\cite{herrera2009dynamics}
+\begin{align}\nonumber
+	2 \frac{\dot{C}'}{C} &+ 2 \frac{\dot{C}}{Cr} - 2\frac{\dot{B}C'}{BC} - 2\frac{\dot{B}}{Br} - 2\frac{A'\dot{C}}{AC} + \\
+	&= \frac{B}{A} \left[2\frac{\ddot{C}}{C} -2\frac{\dot{C}\dot{A}}{CA} + \left(\frac{A}{Cr}\right)^2 + \left(\frac{\dot{C}}{C}\right)^2 - \left(\frac{A}{B}\right)^2 \left(\frac{C'}{C} + \frac{1}{r}\right)\left(\frac{C'}{C} + \frac{1}{r} + 2 \frac{A'}{A}\right)\right]_{\Sigma} = 0,
+\end{align}
+comparing this with $G_{11}$ and $G_{01} $ and its corresponding energy-momentum counterparts, we can rewrite the last equation in a very compact way
+\begin{equation}
+	\label{eq:SecondJcond}
+	\left(p + \Pi + \frac{2}{3}\Omega\right)_{\Sigma} = q_{\Sigma},
+\end{equation}
+then, the matching of \ref{eq:MetricInterior} and \ref{eq:VaidyaMetricB} at $\Sigma$ implies \ref{eq:VaidyaMass} and \ref{eq:SecondJcond}. 
+
+\section{Hydrodynamic Equations}
+The hydrodynamical equations are the same as \ref{eq:EnergyEquationNPF} and \ref{eq:MomentumEquationNPF}, but with an extra term that comes from the radiation density. In terms of the kinematic tensor that we found before this equations are:
+\begin{align}
+	\label{eq:EnergyConserNPFHERR}
+	U_{\alpha} \tensor{T}{^{-\alpha\beta}_{;\alpha}} &= -\frac{1}{A}(\dot{\rho} + \dot{\epsilon}) - \frac{1}{B}(q' + \epsilon') - 2(q+\epsilon) \frac{(ACr)'}{ABCr} - \frac{2\dot{C}}{AC}\left(\rho + p + \Pi + \epsilon - \Omega/3\right) \\\nonumber
+	&- \frac{\dot{B}}{AB} \left(\rho + p + \Pi + 2\epsilon + \frac{2}{3} \Omega \right) = 0,
+\end{align}
+and the momentum equation 
+\begin{align}
+\label{eq:MomentumConseNPFHERR}
+	\tensor{T}{_{\nu}^{-\mu\nu}}\chi_{\mu} & = \frac{1}{A} (\dot{q} + \dot{\epsilon}) +  \frac{2\dot{(BC)}}{BC} (q+ \epsilon) + \frac{1}{B}\left(p' + \Pi' + \epsilon' + \frac{2}{3}\Omega'\right) \\\nonumber &+ \frac{A'}{BA} \left(\rho + p + \Pi + 2\epsilon + \frac{2}{3}\Omega\right) + \frac{2(Cr)'}{BCr} (+\epsilon + \Omega) = 0.
+\end{align}
+
+Now, to study the dynamical properties of the system we introduce the proper time derivative $D_T$ and the proper radial derivative $D_R$ \cite{herrera2009dynamics}\cite{misner1964relativistic} given by
+\begin{equation}
+	D_T = \frac{1}{A}\frac{\partial}{\partial t} \qquad D_R = \frac{1}{R'} \frac{\partial}{\partial r},
+\end{equation}
+where $R = Cr$, defines the proper radius of a spherical surface inside $\Sigma$. Using this two derivatives we can define the velocity of the collapsing fluid in shell of radius r as $U = D_T R = rD_T C $. Note that for the case of collapse $U<0$. With this we can rewrite the Vaidya mass in \ref{eq:VaidyaMass} in a more practical way
+\begin{equation}
+	E \equiv \frac{R'}{B} = \left[1 + U^2 - \frac{2m(t, r)}{R}\right]^{1/2}.
+\end{equation}
+Next, after some algebra, the Einstein equations lead to the following important equations:
+\begin{equation}
+\label{eq:Dtdm}
+	D_T m = -4\pi R^2\left[\left(p + \Pi + \epsilon + \frac{2}{3}\Omega\right)U + (q+\epsilon)E\right] ,
+\end{equation}
+and
+\begin{equation}
+\label{eq:Drdm}
+	D_R m = 4\pi R^2 \left[\rho + \epsilon + (q + \epsilon)\frac{U}{E}\right] .
+\end{equation}
+This two equations describe the behavior of the mass of the star temporally and spatially.  The equation \ref{eq:Dtdm} describes the rate of variation of the total energy inside a surface radius R. In the case of collapse, since U is negative, the first term on the rhs of \ref{eq:Dtdm}, $\left(p + \Pi + \epsilon + 2\Omega/3\right)U$ is negative, and therefor, since there is a minus sign in front, this terms increases the energy (mass) of the system due to the rate of work that is done by the effective pressure $p + \Pi + 2\Omega/3$ and the radiation pressure $\epsilon$. The other term, since $(q+\epsilon)E$ is the matter energy leaving the surface. Therefore, the rate of change of the total energy (that is the Vaidya mass) is the sum of a 'thermodynamic' or 'hydrodynamic' work don on the system a the matter energy leaving the system. The equation \ref{eq:Drdm} shows how the total energy varies in different shells of different radius, the first two terms $\rho + \epsilon$ are the the spatial distribution of matter, energy density of the fluid element plus the null fluid (radiation).  The other term measures the outflow of heat and radiation. The acceleration of the collapsing surface $D_T U$ can be computed from the (11) component of the Einstein equation, after that, we use it to write the conservation of momentum \ref{eq:MomentumConseNPFHERR} in therms only of the thermodynamic fluxes, we get
+\begin{align}
+	\label{eq:ConserMomentumFluxes}
+	\left(\rho + p + \Pi + 2\epsilon + \frac{2}{3}\Omega\right)D_T U &= \left(\rho + p + \Pi + 2\epsilon + \frac{2}{3}\Omega\right)\left[\frac{m}{R^2} + 4\pi R\left(\rho + p + \Pi + \epsilon + \frac{2}{3}\Omega\right) \right] \\\nonumber
+	&-E^2 \left[D_R\left(\rho + p + \Pi + \epsilon + \frac{2}{3}\Omega\right) + \frac{2}{R}(\epsilon + \Omega)\right]\\\nonumber &- \left[D_T q + D_T \epsilon + 4(q+\epsilon)\frac{U}{R} + 2(q+\epsilon)\sigma \right].
+\end{align}
+This equation has the 'Newtonian' form 
+$$
+\text{Force}\, = \,\text{Mass density}\,\, \times \,\,\text{Acceleration}
+$$
+The factor in round brackets represent the effective inertial mass. The first term with square brackets in the r.h.s. of \ref{eq:ConserMomentumFluxes} represent the gravitational forces, it shows that  the gravitational force acting on a particle has a Newtonian part with $m$ and a purely relativistic gravitational contribution due to $p, \epsilon, \Pi$ and $\Omega$. Also, this term shows how dissipation affects the 'active' gravitational mass term. In the second square bracket, the hydrodynamical force, are two separate contributions, the first one is the gradient of the total effective pressure, which includes the radiation pressure and the influence of shear and bulk viscosity, this is the term that counteracts the collapse, and the second contribution comes from the local anisotropy of pressure induced by the radiation pressure and shear viscosity\cite{herrera2009dynamics} \cite{herrera2004dynamics}. The las term in square brackets contains the specific contribution of dissipation to the dynamics of the system, $q + \epsilon$ is positive, meaning that the outflow of heat and radiation decreases the total energy inside the collapsing sphere, reducing the rate of collapse. We still have no information about the dissipative terms in the energy momentum tensor, we need some equations to see how this coefficient behave, this equation are called transport equations, and are precisely the same constitutive equation derived in the previous chapter.
+
+\section{Coupling the transport equations}
+
+We already know the constitutive equation in the Eckart frame of the extended irreversible thermodynamics. This equations (\ref{eq:PhenomEq1}-\ref{eq:PhenomEq3}) relate the three thermodynamic fluxes with a series of parameters and coupling constant that ended up grouping in 'relaxation times' $\tau_0, \tau_1, \tau_2$. We re rearrange eq. \ref{eq:PhenomEq1}-\ref{eq:PhenomEq3} (and use the definitions of tensor quantities in terms of metric components) to obtain dynamic equations for the three fluxes, 
+\begin{equation}
+\label{eq:Transport1}
+	\tau_0 \dot{\Pi} = -\left(\zeta + \frac{\tau_0}{2}\Pi\right)A\Theta + \frac{A}{B} \alpha_0 \zeta \left[q' + q\left(\frac{A'}{A} + \frac{1(Cr)'}{Cr}\right)\right] - \Pi\left[\frac{\zeta T}{2}\dot{\left(\frac{\tau_0}{\zeta T}\right)} + A\right],
+\end{equation} 
+\begin{align}
+	\label{eq:Transport2}
+	\tau_1 \dot{q} &= -\frac{A}{B}\kappa \left\{ T' \left(1 + \alpha_0 \Pi + \frac{2}{3} \alpha_1 \Omega\right) + T\left[\frac{A'}{A} - \alpha_0 \Pi' - \frac{2}{3} \alpha_1 \left(\Omega' + \Omega\left(\frac{A'}{A} + 3\frac{(rC)'}{rc}\right)\right)\right]  \right\} \\\nonumber 
+	&- q\left[\frac{\kappa T^2}{2}\dot{\left(\frac{\tau_1}{\kappa T^2} \right)} + \frac{\tau_1}{2}A\Theta + A\right],
+\end{align}
+
+\begin{equation}
+	\label{eq:Transport3}
+	\tau_2 \dot{\Omega} = -2\eta A\sigma + 2 \eta\alpha_1 \frac{A}{B} \left(q' - q\frac{(rC)'}{rC}\right) - \Omega \left[\eta T \dot{\left(\frac{\tau_2}{2\eta T}\right)} + \frac{\tau_2}{2}A\Theta + A\right].
+\end{equation}
+Now we have to couple this equations with equation \ref{eq:ConserMomentumFluxes}, in order to bring out the effects of dissipation on the dynamics of the collapsing sphere. We replace \ref{eq:Transport1} and \ref{eq:Transport2} in \ref{eq:ConserMomentumFluxes} and obtain \cite{herrera2009dynamics}
+\begin{align}
+\nonumber
+	&\left(\rho + p + \Pi + 2\epsilon + \frac{2}{3}\Omega\right)(1 - \Gamma + \Delta) D_T U = (1-\Gamma + \Delta)F_{g} + F_{H} \\\nonumber
+	&\frac{\kappa E^2}{\tau_1} \left\{ D_R T\left(1 + \alpha_0\Pi + \frac{2}{3}\alpha_1 \Omega\right)- T\left[\alpha_0 D_R\Pi + \frac{2}{3}\alpha_1\left(D_R \Omega + \frac{3}{R}\Omega\right)\right] \right\} \\\nonumber
+	&-E^2\left(\rho + p + \Pi + 2 \epsilon + \frac{2}{3} \Omega\right)\Delta\left(\frac{D_R q}{q} + \frac{2q}{R}\right)\\\nonumber
+	&+ E\left[\frac{\kappa T^2 q}{2\tau_1}D_T \left(\frac{\tau_1}{\kappa T^2}\right) - D_T \epsilon\right] + E\left[\frac{q}{\tau_1} + 2(q+\epsilon)\frac{U}{R}\right] \\
+	\label{eq:MasterEquationTesis}
+	&+E\frac{\Delta}{\alpha_0 \zeta q} \left(\rho + p + \Pi + 2\epsilon + \frac{2}{3} \Omega\right)\left\{ \left[1 + \frac{\zeta T}{2}D_T \left(\frac{\tau_0}{\zeta T}\right) \right]\Pi + \tau_0 D_T \Pi \right\}
+\end{align}
+
+In this gigantic master equation several definitions where made:
+\begin{align}
+	F_g &= -\left(\rho + p + \Pi + 2\epsilon + \frac{2}{3}\Omega\right)\left[m + 4\pi \left(p+\Pi + \epsilon + \frac{2}{3}\Omega\right)R^3\right]\frac{1}{R^2} \\
+	F_H &= -E^2 \left[D_R\left(p + \Pi + \epsilon + \frac{2}{3}\Omega \right) + 2(\epsilon + \Omega)\frac{1}{R}\right] \\
+	\Lambda &=  \frac{\kappa T}{\tau_1}\left(\rho + p + \Pi + 2\epsilon + \frac{2}{3}\Omega \right)^{-1} \left(1 - \frac{2}{3}\alpha_1 \Omega\right) \\
+	\Delta &= \alpha_0 \zeta q\left(\rho + p + \Pi + 2\epsilon + \frac{2}{3}\Omega\right)^{-1}\left(\frac{3q + a \epsilon}{2\zeta + \tau_0 \Pi}\right)
+\end{align}
+
+This means that once transport equations have been taking into account, the internal energy density and the effective inertial mass appear diminished by the same factor $1 - \Lambda + \Delta$. Note also that as $\Lambda - \Delta = \nu $ tends to 1, the effective inertial mass density of the fluid element tends to zero, but since $F_g$ is also multiplied by the same factor we see that the effective gravitational attraction on any fluid element decreases by the same factor, which of course is to be expected from the equivalence principle. Also note that $F_H$ seams to be in principle independent of this factor. It could be the case in which a collapsing star evolves in such a way, that the value of $\nu$ keeps approaching 1, as this happens, the decreasing of gravitational force term would eventually lead to a change of sign in the acceleration. Since this would happen for small values of the effective inertial mas density, that would imply a strong bouncing of the sphere, as the described by \cite{may1966hydrodynamic} in the case of the collapse of a perfect fluid. This kind of behavior could be accomplished in the formation of a neutron star in a supernova explosion \cite{herrera2004dynamics}.
+
+\section{Conclusions}
+
+The important remarks on the equation have already been made, however, it is important to make something clear. The dissipative variables have a major effect on the internal energy and the effective inertial mass, this effect could result in bouncing or a stagnation of the collapse depending on the value of the coefficients defined. Nevertheless, the role that this effect might play in the outcome of gravitational collapse will critically depend on the specific numerical values of those quantities, and such estimations require the conditions of a real astrophysical event. Therefore, with this presenting here we wanted to show how the dissipative and coupling coefficients enter in the dynamical equations and why their effect could be important and should be taken into account for numerical simulation. The parameter $\nu$ could reach unity in non very exotic systems, such as the formation of a neutrino star and in a supernova explosion. Indeed, at last stages of massive star evolution, the decreasing of the opacity of the fluid, from high values preventing the propagation of photons and neutrinos, to smaller values, gives rise to radiative heat conduction. And under this conditions, both $\kappa$ and $T$ could be sufficiently large as to imply a substantial increase of $\nu$ \cite{herrera2009relativistic}. 
+
+It could be interesting also to study the behavior of these equation using computational techniques, in the study of a particular astrophysical event. The nature of the fluid (its equation of state) and the initial conditions of the scenario can be investigated in order to propose some reasonable values for the relaxation times and see how the process evolves. This could then be compared with results in non-causal theories and experiments to see the relevance of the causal theory of dissipation and its tangible effects on the dynamics of the collapse.
